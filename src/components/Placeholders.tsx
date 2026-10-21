@@ -119,21 +119,21 @@ export const HeroGenerativeCanvas: React.FC = () => {
   );
 };
 
-// Hero Portrait (featuring real USTHB architectural photograph)
+// Hero Portrait (featuring Lake Twilight photograph)
 export const HeroPortraitPlaceholder: React.FC = () => {
   return (
     <div className="relative w-full h-full min-h-[300px] md:min-h-[380px] lg:min-h-[460px] overflow-hidden border-l border-grid group select-none">
       <img
-        src="/profile/usthb-facade.jpg"
-        alt="USTHB Monumental Arches at Sunset"
-        className="w-full h-full object-cover object-[center_45%] group-hover:scale-105 transition-transform duration-700 ease-out"
+        src="/profile/lake-twilight.jpg"
+        alt="Twilight Waters and Horizon at Dusk in Algiers"
+        className="w-full h-full object-cover object-[center_60%] group-hover:scale-105 transition-transform duration-700 ease-out"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30 pointer-events-none" />
 
       {/* Header technical coordinates */}
       <div className="absolute top-4 left-4 right-4 flex justify-between text-[10px] font-mono tracking-widest text-soft-linen z-10">
-        <span className="bg-graphite/80 backdrop-blur-sm px-2.5 py-1 border border-white/20">USTHB ALGIERS // 36°45'N</span>
-        <span className="bg-graphite/80 backdrop-blur-sm px-2.5 py-1 border border-white/20">FIG. 01: ARCHITECTURAL STUDY</span>
+        <span className="bg-graphite/80 backdrop-blur-sm px-2.5 py-1 border border-white/20">TWILIGHT WATERS // 36°45'N</span>
+        <span className="bg-graphite/80 backdrop-blur-sm px-2.5 py-1 border border-white/20">FIG. 01: VISUAL ESSAY</span>
       </div>
 
       {/* Center aesthetic badge */}
@@ -153,7 +153,7 @@ export const HeroPortraitPlaceholder: React.FC = () => {
 
       {/* Footer metadata */}
       <div className="absolute bottom-4 left-4 right-4 flex justify-between text-[9px] font-mono tracking-widest text-soft-linen z-10">
-        <span className="bg-graphite/80 backdrop-blur-sm px-2 py-1 border border-white/20">RATIO: 16:9 • PHOTOGRAPHY</span>
+        <span className="bg-graphite/80 backdrop-blur-sm px-2 py-1 border border-white/20">ALGIERS WATERFRONT // 35MM</span>
         <span className="bg-terracotta/90 text-soft-linen px-2 py-1 uppercase tracking-wider font-semibold">
           ROOTED INNOVATION
         </span>
@@ -260,29 +260,29 @@ export const AboutSectionPlaceholder: React.FC = () => {
   );
 };
 
-// Works Vertical (featuring Algiers park sunset photograph in 9:16 vertical ratio)
+// Works Vertical (featuring USTHB brutalist arches in 9:16 vertical ratio)
 export const WorksVerticalPlaceholder: React.FC = () => {
   return (
     <div className="relative w-full h-full min-h-[480px] overflow-hidden border-t lg:border-t-0 lg:border-l border-grid group select-none">
       <img
-        src="/profile/park-sunset.jpg"
-        alt="Algiers Park Meadow and Bench at Sunset"
-        className="w-full h-full object-cover object-[center_60%] group-hover:scale-105 transition-transform duration-700 ease-out"
+        src="/profile/usthb-facade.jpg"
+        alt="USTHB Monumental Concrete Arches under Sunset Clouds"
+        className="w-full h-full object-cover object-[center_50%] group-hover:scale-105 transition-transform duration-700 ease-out"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30 pointer-events-none" />
 
       <div className="absolute top-4 left-4 right-4 flex justify-between text-[10px] font-mono tracking-widest text-soft-linen z-10">
-        <span className="bg-graphite/80 backdrop-blur-sm px-2.5 py-1 border border-white/20">ALGIERS // PARK SUNSET</span>
+        <span className="bg-graphite/80 backdrop-blur-sm px-2.5 py-1 border border-white/20">USTHB ALGIERS // ARCHES</span>
         <span className="bg-graphite/80 backdrop-blur-sm px-2.5 py-1 border border-white/20">STUDY // 02</span>
       </div>
 
       <div className="absolute bottom-4 left-4 right-4 z-10 flex justify-between items-end">
         <div className="bg-graphite/85 backdrop-blur-sm p-3.5 border border-white/20">
           <span className="block text-xs font-mono font-bold text-soft-linen uppercase tracking-wider">
-            GOLDEN SOLITUDE
+            MONUMENTAL ARCHES
           </span>
           <span className="block text-[9px] font-mono text-terracotta dark:text-soft-linen/90 tracking-widest mt-1">
-            NATURAL RATIO 9:16 • 35MM
+            NATURAL RATIO 9:16 • ARCHITECTURE
           </span>
         </div>
         <span className="bg-terracotta/90 text-soft-linen text-[9px] font-mono px-2 py-1 uppercase tracking-wider font-semibold">
@@ -293,19 +293,19 @@ export const WorksVerticalPlaceholder: React.FC = () => {
   );
 };
 
-// Contact Placeholder (featuring twilight waters photograph)
+// Contact Placeholder (featuring Algiers park sunset photograph)
 export const ContactPlaceholder: React.FC = () => {
   return (
     <div className="relative w-full h-full min-h-[340px] overflow-hidden border-t md:border-t-0 md:border-l border-grid group select-none">
       <img
-        src="/profile/lake-twilight.jpg"
-        alt="Lake at twilight with reflections"
-        className="w-full h-full object-cover object-[center_70%] group-hover:scale-105 transition-transform duration-700 ease-out"
+        src="/profile/park-sunset.jpg"
+        alt="Algiers Park Meadow and Bench at Sunset"
+        className="w-full h-full object-cover object-[center_60%] group-hover:scale-105 transition-transform duration-700 ease-out"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/30 pointer-events-none" />
 
       <div className="absolute top-4 left-4 right-4 flex justify-between text-[10px] font-mono tracking-widest text-soft-linen z-10">
-        <span className="bg-graphite/80 backdrop-blur-sm px-2.5 py-1 border border-white/20">TWILIGHT WATERS</span>
+        <span className="bg-graphite/80 backdrop-blur-sm px-2.5 py-1 border border-white/20">ALGIERS // PARK SUNSET</span>
         <span className="bg-graphite/80 backdrop-blur-sm px-2.5 py-1 border border-white/20">STUDY // 03</span>
       </div>
 

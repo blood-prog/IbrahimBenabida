@@ -4,15 +4,15 @@ import { personalInfo } from '../data/portfolioData';
 export const HeroSection: React.FC = () => {
   return (
     <section className="border-b border-grid overflow-hidden">
-      {/* Top Visual Media Grid (2 Columns) */}
-      <div className="grid grid-cols-1 md:grid-cols-2 border-b border-grid">
+      {/* Top Visual Media Grid (7-col canvas + 5-col portrait to align with identity banner below) */}
+      <div className="grid grid-cols-4 md:grid-cols-12 border-b border-grid">
         {/* Left Visual Box: Data Science Waveform Canvas */}
-        <div className="relative aspect-[16/10] md:aspect-auto md:min-h-[380px] lg:min-h-[460px] overflow-hidden border-b md:border-b-0 md:border-r border-grid">
+        <div className="col-span-4 md:col-span-7 relative aspect-[16/10] md:aspect-auto md:min-h-[380px] lg:min-h-[460px] overflow-hidden border-b md:border-b-0 md:border-r border-grid">
           <HeroGenerativeCanvas />
         </div>
 
-        {/* Right Visual Box: Abstract Editorial Portrait Placeholder */}
-        <div className="relative aspect-[16/10] md:aspect-auto md:min-h-[380px] lg:min-h-[460px] overflow-hidden">
+        {/* Right Visual Box: Abstract Editorial Portrait / Lake Twilight Study */}
+        <div className="col-span-4 md:col-span-5 relative aspect-[4/3] md:aspect-auto md:min-h-[380px] lg:min-h-[460px] overflow-hidden">
           <HeroPortraitPlaceholder />
         </div>
       </div>

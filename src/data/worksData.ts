@@ -631,34 +631,14 @@ export const allWorksData: WorkItem[] = [
     tags: ['REACT 19', 'TAILWIND', 'VITE', 'MOTION PHYSICS', 'LIVE NOW'],
     year: '2026',
     client: 'Self-Initiated',
-    image: '/profile/usthb-facade.jpg',
+    image: '/ibrahim-portrait.jpg',
     status: 'COMPLETED',
     span: 'sm:col-span-2',
     gallery: [
       {
-        image: '/profile/usthb-facade.jpg',
-        title: 'USTHB Monumental Arches',
-        caption: 'Iconic brutalist concrete arches under golden sunset clouds at USTHB Algiers',
-      },
-      {
-        image: '/profile/usthb-campus.jpg',
-        title: 'USTHB Faculty Campus Grounds',
-        caption: 'Modern academic architecture, palm trees, and university lawns in Bab Ezzouar',
-      },
-      {
-        image: '/profile/park-sunset.jpg',
-        title: 'Golden Hour Park Bench',
-        caption: 'Low-angle golden sunlight illuminating the meadow and architectural curved bench',
-      },
-      {
-        image: '/profile/lake-twilight.jpg',
-        title: 'Twilight Reflections & Waterfront',
-        caption: 'Atmospheric evening view across the water with duck silhouettes and night city lights',
-      },
-      {
-        image: '/profile/golden-forest.jpg',
-        title: 'Pine Forest Grove Canopy',
-        caption: 'Sunlight filtering through tree trunks into an open golden meadow',
+        image: '/ibrahim-portrait.jpg',
+        title: 'Ibrahim Benabida Creator Portrait',
+        caption: 'Mathematical precision meets modern digital craft at USTHB',
       },
     ],
   },

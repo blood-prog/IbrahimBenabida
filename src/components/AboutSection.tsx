@@ -99,98 +99,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) 
     };
   }, [isDesktop]);
 
-  const profileImages = [
-    {
-      src: '/profile/usthb-facade.jpg',
-      title: 'USTHB Monumental Arches',
-      location: 'USTHB Algiers',
-      label: 'ARCHITECTURAL STUDY',
-    },
-    {
-      src: '/profile/usthb-campus.jpg',
-      title: 'Campus Lawn & Pavilions',
-      location: 'Bab Ezzouar',
-      label: 'CAMPUS LIFE',
-    },
-    {
-      src: '/profile/park-sunset.jpg',
-      title: 'Sunset Solitude',
-      location: 'Algiers Park',
-      label: 'GOLDEN HOUR',
-    },
-    {
-      src: '/profile/lake-twilight.jpg',
-      title: 'Twilight Reflections',
-      location: 'Waterfront Algiers',
-      label: 'NIGHT ESSAY',
-    },
-    {
-      src: '/profile/golden-forest.jpg',
-      title: 'Pine Forest Canopy',
-      location: 'Algiers Heights',
-      label: 'NATURAL ESSAY',
-    },
-  ];
-
-  const [activeImageIdx, setActiveImageIdx] = useState(0);
-  const activeImage = profileImages[activeImageIdx];
-
-  const renderImageContent = () => (
-    <div className="relative w-full h-full overflow-hidden group select-none">
-      <img
-        key={activeImage.src}
-        src={activeImage.src}
-        alt={activeImage.title}
-        className="w-full h-full object-cover object-[center_45%] transition-all duration-700 ease-out group-hover:scale-105 animate-fade-in"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30 pointer-events-none" />
-
-      {/* Top Floating Control Bar: Photo Switcher [01] - [05] */}
-      <div className="absolute top-4 left-4 right-4 flex flex-wrap justify-between items-center gap-2 z-20">
-        <div className="flex items-center gap-1.5 bg-black/60 backdrop-blur-md px-2.5 py-1 border border-white/20 text-soft-linen text-[10px] font-mono">
-          <span className="w-1.5 h-1.5 rounded-full bg-terracotta animate-pulse" />
-          <span>PROFILE ESSAYS</span>
-        </div>
-        <div className="flex items-center gap-1 bg-black/60 backdrop-blur-md p-1 border border-white/20">
-          {profileImages.map((_, i) => (
-            <button
-              key={i}
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                setActiveImageIdx(i);
-              }}
-              className={`px-2 py-0.5 text-[10px] font-mono transition-all cursor-pointer ${
-                activeImageIdx === i
-                  ? 'bg-terracotta text-soft-linen font-bold shadow-sm'
-                  : 'text-soft-linen/70 hover:text-soft-linen hover:bg-white/10'
-              }`}
-            >
-              0{i + 1}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Bottom Metadata & Caption Overlay */}
-      <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end z-20 pointer-events-none">
-        <div className="bg-graphite/85 backdrop-blur-md p-3 border border-white/20 max-w-sm">
-          <p className="text-[11px] font-mono font-bold text-soft-linen tracking-wider uppercase">
-            {activeImage.title}
-          </p>
-          <div className="flex items-center gap-2 text-[9px] font-mono text-terracotta dark:text-soft-linen/80 tracking-widest mt-0.5 uppercase">
-            <span>{activeImage.location}</span>
-            <span>•</span>
-            <span>{activeImage.label}</span>
-          </div>
-        </div>
-        <span className="hidden sm:inline-block bg-terracotta/90 text-soft-linen text-[9px] font-mono px-2 py-1 uppercase tracking-wider font-semibold">
-          INDEX 0{activeImageIdx + 1} / 05
-        </span>
-      </div>
-    </div>
-  );
-
   return (
     <section id="about" className="text-graphite dark:text-soft-linen scroll-mt-16">
       {/* 12-Column Grid with Gutters (1 col left, 10 cols center, 1 col right) */}
@@ -247,7 +155,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) 
                 {/* On mobile, image is displayed in natural document flow */}
                 {!isDesktop && (
                   <div className="w-full h-full relative overflow-hidden">
-                    {renderImageContent()}
+                    <img
+                      src="/profile/usthb-campus.jpg"
+                      alt="USTHB Faculty & Campus Grounds"
+                      className="w-full h-full object-cover object-[center_55%]"
+                    />
                   </div>
                 )}
               </div>
@@ -266,7 +178,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) 
                   willChange: 'left, width, top',
                 }}
               >
-                {renderImageContent()}
+                <img
+                  src="/profile/usthb-campus.jpg"
+                  alt="USTHB Faculty & Campus Grounds"
+                  className="w-full h-full object-cover object-[center_55%]"
+                />
               </div>
             )}
           </div>

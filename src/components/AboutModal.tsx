@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, CheckCircle, BookOpen, Sparkles, Code2, Camera } from 'lucide-react';
+import { X, CheckCircle, BookOpen, Sparkles, Code2 } from 'lucide-react';
 import {
   personalInfo,
   analyticalMindPillars,
@@ -125,80 +125,6 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
                   <p className="text-xs font-sans text-graphite/80 dark:text-soft-linen/80 leading-relaxed">
                     {item.description}
                   </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Pillar 4: Environment & Visual Studies (5 Photography Works) */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-3 border-b border-grid pb-2">
-              <Camera size={20} className="text-terracotta dark:text-soft-linen" />
-              <h4 className="text-xl md:text-2xl font-display font-bold text-terracotta dark:text-soft-linen">
-                Environment &amp; Visual Studies
-              </h4>
-              <span className="text-xs font-mono text-graphite/60 dark:text-soft-linen/60 ml-auto">
-                USTHB &amp; ALGIERS PHOTOGRAPHY
-              </span>
-            </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              {[
-                {
-                  src: '/profile/usthb-facade.jpg',
-                  title: 'USTHB Monumental Arches',
-                  desc: 'Brutalist concrete architecture under sunset golden clouds at University of Science and Technology.',
-                  ratio: 'aspect-[3/4]',
-                  span: 'sm:col-span-1',
-                },
-                {
-                  src: '/profile/usthb-campus.jpg',
-                  title: 'Campus Lawn & Pavilions',
-                  desc: 'Modern faculty grounds with palm trees, lawns, and academic pavilions in Bab Ezzouar.',
-                  ratio: 'aspect-[16/10]',
-                  span: 'sm:col-span-2',
-                },
-                {
-                  src: '/profile/park-sunset.jpg',
-                  title: 'Sunset Solitude',
-                  desc: 'Low-angle sun flare across a meadow and curved stone bench in Algiers.',
-                  ratio: 'aspect-[3/4]',
-                  span: 'sm:col-span-1',
-                },
-                {
-                  src: '/profile/lake-twilight.jpg',
-                  title: 'Twilight Reflections',
-                  desc: 'Atmospheric evening view across the water with duck silhouettes and night city lights.',
-                  ratio: 'aspect-[3/4]',
-                  span: 'sm:col-span-1',
-                },
-                {
-                  src: '/profile/golden-forest.jpg',
-                  title: 'Pine Forest Grove Canopy',
-                  desc: 'Golden hour sunlight illuminating tree trunks in a tranquil park.',
-                  ratio: 'aspect-[16/10]',
-                  span: 'sm:col-span-1 md:col-span-1',
-                },
-              ].map((photo, i) => (
-                <div key={i} className={`border border-grid bg-white/40 dark:bg-black/20 overflow-hidden flex flex-col group ${photo.span}`}>
-                  <div className={`relative w-full ${photo.ratio} overflow-hidden`}>
-                    <img
-                      src={photo.src}
-                      alt={photo.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute top-2 left-2 bg-black/70 text-soft-linen text-[9px] font-mono px-2 py-0.5 border border-white/20">
-                      0{i + 1} // 35MM
-                    </div>
-                  </div>
-                  <div className="p-3 space-y-1">
-                    <p className="font-mono font-bold text-xs text-graphite dark:text-soft-linen uppercase tracking-wider">
-                      {photo.title}
-                    </p>
-                    <p className="text-[11px] font-sans text-graphite/80 dark:text-soft-linen/80 leading-relaxed">
-                      {photo.desc}
-                    </p>
-                  </div>
                 </div>
               ))}
             </div>
