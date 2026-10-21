@@ -9,10 +9,10 @@
 
 <br />
 
-[![License](https://img.shields.io/github/license/blood-prog/IbrahimBenabida?style=flat-square&color=9ece6a&labelColor=1a1b26)](LICENSE)
-[![Last commit](https://img.shields.io/github/last-commit/blood-prog/IbrahimBenabida?style=flat-square&color=7aa2f7&labelColor=1a1b26)](https://github.com/blood-prog/IbrahimBenabida/commits)
-[![Stars](https://img.shields.io/github/stars/blood-prog/IbrahimBenabida?style=flat-square&color=e0af68&labelColor=1a1b26)](https://github.com/blood-prog/IbrahimBenabida/stargazers)
-![Node](https://img.shields.io/badge/node-18%2B-bb9af7?style=flat-square&labelColor=1a1b26)
+[![License](https://img.shields.io/github/license/blood-prog/IbrahimBenabida?style=flat-square&color=8EA885&labelColor=1E1B1A)](LICENSE)
+[![Last commit](https://img.shields.io/github/last-commit/blood-prog/IbrahimBenabida?style=flat-square&color=D4A373&labelColor=1E1B1A)](https://github.com/blood-prog/IbrahimBenabida/commits)
+[![Stars](https://img.shields.io/github/stars/blood-prog/IbrahimBenabida?style=flat-square&color=AD4A3E&labelColor=1E1B1A)](https://github.com/blood-prog/IbrahimBenabida/stargazers)
+![Node](https://img.shields.io/badge/node-18%2B-E8E3D9?style=flat-square&labelColor=1E1B1A)
 
 </div>
 
@@ -95,17 +95,17 @@ flowchart LR
     types -.-> components
     public["public/"] -.-> app
 
-    classDef entry fill:#bb9af7,stroke:#7c5cc4,color:#1a1b26
-    classDef ui fill:#7aa2f7,stroke:#4f74c9,color:#1a1b26
-    classDef content fill:#9ece6a,stroke:#6a9a3a,color:#1a1b26
-    classDef asset fill:#ff9e64,stroke:#c9703a,color:#1a1b26
+    classDef entry fill:#D4A373,stroke:#AD4A3E,color:#1E1B1A
+    classDef ui fill:#E8E3D9,stroke:#3D3432,color:#1E1B1A
+    classDef content fill:#8EA885,stroke:#4E6847,color:#1E1B1A
+    classDef asset fill:#AD4A3E,stroke:#5A1212,color:#E8E3D9
     class html,main entry
     class app,components ui
     class data,types content
     class public asset
 ```
 
-<sub>Purple is the entry point, blue is the interface, green is content and types, orange is static assets. Dotted lines are supporting relationships.</sub>
+<sub>Sand gold is the entry point, soft linen is the interface, sage green is content and types, terracotta is static assets. Dotted lines are supporting relationships.</sub>
 
 <br />
 
@@ -192,8 +192,8 @@ The project builds to plain static files, so any static host will do.
 flowchart LR
     src["TSX and Tailwind"] --> tsc["Type-check"] --> bundle["Vite build"] --> dist[("dist/")] --> host["Static host"]
 
-    classDef step fill:#7aa2f7,stroke:#4f74c9,color:#1a1b26
-    classDef out fill:#9ece6a,stroke:#6a9a3a,color:#1a1b26
+    classDef step fill:#D4A373,stroke:#AD4A3E,color:#1E1B1A
+    classDef out fill:#8EA885,stroke:#4E6847,color:#1E1B1A
     class src,tsc,bundle step
     class dist,host out
 ```

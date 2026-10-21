@@ -3,12 +3,65 @@
 <desc id="d">A git commit message editor reads: replace the original portfolio with the remake. Thanks for stopping by. Designed and built by Ibrahim Benabida. MIT licensed.</desc>
 <style>
 .m{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono','DejaVu Sans Mono',monospace}
-@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
-.bc{animation:blink 1.1s steps(1,end) infinite}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
-<defs><clipPath id="pc"><rect x="40" y="20" width="1200" height="276" rx="14"/></clipPath></defs>
-<rect x="40" y="20" width="1200" height="276" rx="14" fill="#1a1b26"/>
-<g class="m" clip-path="url(#pc)"><rect x="40" y="20" width="1200" height="44" fill="#202336"/><rect x="40" y="63" width="1200" height="1" fill="#2f334d"/><text x="64" y="48" font-size="16" fill="#e8ecff">COMMIT_EDITMSG</text><text x="1216" y="48" font-size="16" fill="#6e77a1" text-anchor="end">main</text><rect x="40" y="64" width="100" height="232" fill="#15161f"/><text x="114" y="115.6" font-size="15" fill="#565f89" text-anchor="end">1</text><text x="114" y="147.6" font-size="15" fill="#565f89" text-anchor="end">2</text><text x="114" y="173.6" font-size="15" fill="#565f89" text-anchor="end">3</text><text x="114" y="207.6" font-size="15" fill="#565f89" text-anchor="end">4</text><text x="114" y="233.6" font-size="15" fill="#565f89" text-anchor="end">5</text><text x="114" y="259.6" font-size="15" fill="#565f89" text-anchor="end">6</text><text x="168.0" y="115.6" font-size="26" font-weight="700" fill="#e8ecff" textLength="109.2" lengthAdjust="spacing">replace</text><text x="292.8" y="115.6" font-size="26" font-weight="700" fill="#e8ecff" textLength="46.8" lengthAdjust="spacing">the</text><text x="355.2" y="115.6" font-size="26" font-weight="700" fill="#e8ecff" textLength="124.8" lengthAdjust="spacing">original</text><text x="495.6" y="115.6" font-size="26" font-weight="700" fill="#e8ecff" textLength="140.4" lengthAdjust="spacing">portfolio</text><text x="651.6" y="115.6" font-size="26" font-weight="700" fill="#e8ecff" textLength="62.4" lengthAdjust="spacing">with</text><text x="729.6" y="115.6" font-size="26" font-weight="700" fill="#e8ecff" textLength="46.8" lengthAdjust="spacing">the</text><text x="792.0" y="115.6" font-size="26" font-weight="700" fill="#e8ecff" textLength="93.6" lengthAdjust="spacing">remake</text><text x="168.0" y="173.6" font-size="20" font-weight="400" fill="#c0caf5" textLength="72.0" lengthAdjust="spacing">Thanks</text><text x="252.0" y="173.6" font-size="20" font-weight="400" fill="#c0caf5" textLength="36.0" lengthAdjust="spacing">for</text><text x="300.0" y="173.6" font-size="20" font-weight="400" fill="#c0caf5" textLength="96.0" lengthAdjust="spacing">stopping</text><text x="408.0" y="173.6" font-size="20" font-weight="400" fill="#c0caf5" textLength="36.0" lengthAdjust="spacing">by.</text><text x="456.0" y="173.6" font-size="20" font-weight="400" fill="#c0caf5" textLength="96.0" lengthAdjust="spacing">Designed</text><text x="564.0" y="173.6" font-size="20" font-weight="400" fill="#c0caf5" textLength="36.0" lengthAdjust="spacing">and</text><text x="612.0" y="173.6" font-size="20" font-weight="400" fill="#c0caf5" textLength="60.0" lengthAdjust="spacing">built</text><text x="684.0" y="173.6" font-size="20" font-weight="400" fill="#c0caf5" textLength="24.0" lengthAdjust="spacing">by</text><text x="720.0" y="173.6" font-size="20" font-weight="400" fill="#c0caf5" textLength="84.0" lengthAdjust="spacing">Ibrahim</text><text x="816.0" y="173.6" font-size="20" font-weight="400" fill="#c0caf5" textLength="108.0" lengthAdjust="spacing">Benabida.</text><text x="168.0" y="207.6" font-size="20" font-weight="400" fill="#c0caf5" textLength="48.0" lengthAdjust="spacing">Fork</text><text x="228.0" y="207.6" font-size="20" font-weight="400" fill="#c0caf5" textLength="36.0" lengthAdjust="spacing">it,</text><text x="276.0" y="207.6" font-size="20" font-weight="400" fill="#c0caf5" textLength="60.0" lengthAdjust="spacing">learn</text><text x="348.0" y="207.6" font-size="20" font-weight="400" fill="#c0caf5" textLength="48.0" lengthAdjust="spacing">from</text><text x="408.0" y="207.6" font-size="20" font-weight="400" fill="#c0caf5" textLength="36.0" lengthAdjust="spacing">it,</text><text x="456.0" y="207.6" font-size="20" font-weight="400" fill="#c0caf5" textLength="48.0" lengthAdjust="spacing">make</text><text x="516.0" y="207.6" font-size="20" font-weight="400" fill="#c0caf5" textLength="24.0" lengthAdjust="spacing">it</text><text x="552.0" y="207.6" font-size="20" font-weight="400" fill="#c0caf5" textLength="72.0" lengthAdjust="spacing">yours.</text><text x="168.0" y="259.6" font-size="20" font-weight="400" fill="#6e77a1" textLength="12.0" lengthAdjust="spacing">#</text><text x="192.0" y="259.6" font-size="20" font-weight="400" fill="#6e77a1" textLength="36.0" lengthAdjust="spacing">MIT</text><text x="240.0" y="259.6" font-size="20" font-weight="400" fill="#6e77a1" textLength="108.0" lengthAdjust="spacing">licensed.</text><text x="360.0" y="259.6" font-size="20" font-weight="400" fill="#6e77a1" textLength="60.0" lengthAdjust="spacing">Lines</text><text x="432.0" y="259.6" font-size="20" font-weight="400" fill="#6e77a1" textLength="96.0" lengthAdjust="spacing">starting</text><text x="540.0" y="259.6" font-size="20" font-weight="400" fill="#6e77a1" textLength="48.0" lengthAdjust="spacing">with</text><text x="600.0" y="259.6" font-size="20" font-weight="400" fill="#6e77a1" textLength="36.0" lengthAdjust="spacing">'#'</text><text x="648.0" y="259.6" font-size="20" font-weight="400" fill="#6e77a1" textLength="48.0" lengthAdjust="spacing">will</text><text x="708.0" y="259.6" font-size="20" font-weight="400" fill="#6e77a1" textLength="24.0" lengthAdjust="spacing">be</text><text x="744.0" y="259.6" font-size="20" font-weight="400" fill="#6e77a1" textLength="96.0" lengthAdjust="spacing">ignored.</text><rect class="bc" x="630.0" y="189.6" width="11" height="24" fill="#c0caf5"/></g>
-<rect x="40.75" y="20.75" width="1198.5" height="274.5" rx="13.5" fill="none" stroke="#2f334d" stroke-width="1.5"/>
+<defs>
+  <clipPath id="pc"><rect x="40" y="20" width="1200" height="276" rx="14"/></clipPath>
+  <clipPath id="c-sub">
+    <rect x="168" y="90" width="750" height="40">
+      <animate attributeName="width" values="0;0;750;750;750;0" keyTimes="0;0.08;0.35;0.92;0.97;1" dur="14s" repeatCount="indefinite"/>
+    </rect>
+  </clipPath>
+</defs>
+
+<rect x="40" y="20" width="1200" height="276" rx="14" fill="#1E1B1A"/>
+<g class="m" clip-path="url(#pc)">
+  <!-- Titlebar -->
+  <rect x="40" y="20" width="1200" height="44" fill="#282321"/>
+  <rect x="40" y="63" width="1200" height="1" fill="#3D3432"/>
+  <circle cx="66" cy="42" r="6" fill="#AD4A3E"/>
+  <circle cx="86" cy="42" r="6" fill="#D4A373"/>
+  <circle cx="106" cy="42" r="6" fill="#8EA885"/>
+  <text x="130" y="48" font-size="15" fill="#E8E3D9">COMMIT_EDITMSG</text>
+  <text x="1216" y="48" font-size="15" fill="#D4A373" text-anchor="end">main</text>
+
+  <!-- Gutter -->
+  <rect x="40" y="64" width="100" height="232" fill="#181514"/>
+  <text x="114" y="116" font-size="15" fill="#6E625F" text-anchor="end">1</text>
+  <text x="114" y="148" font-size="15" fill="#6E625F" text-anchor="end">2</text>
+  <text x="114" y="174" font-size="15" fill="#6E625F" text-anchor="end">3</text>
+  <text x="114" y="208" font-size="15" fill="#6E625F" text-anchor="end">4</text>
+  <text x="114" y="234" font-size="15" fill="#6E625F" text-anchor="end">5</text>
+  <text x="114" y="260" font-size="15" fill="#6E625F" text-anchor="end">6</text>
+
+  <!-- Line 1: Commit subject with typing animation -->
+  <g clip-path="url(#c-sub)">
+    <text x="168" y="116" font-size="26" font-weight="700" fill="#E8E3D9">replace the original portfolio with the remake</text>
+  </g>
+  
+  <!-- Line 1 Cursor -->
+  <rect x="168" y="94" width="12" height="26" rx="2" fill="#D4A373">
+    <animate attributeName="x" values="168;168;900;900;168" keyTimes="0;0.08;0.35;0.92;1" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;1;0;1;0;1;0;1;0;1;0;0" keyTimes="0;0.07;0.35;0.42;0.50;0.58;0.66;0.74;0.82;0.88;0.92;0.96;1" dur="14s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Line 3: Body text -->
+  <g>
+    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.36;0.42;0.94;1" dur="14s" repeatCount="indefinite"/>
+    <text x="168" y="174" font-size="20" fill="#D8D1C5">Thanks for stopping by. Designed and built by <tspan fill="#E8E3D9" font-weight="600">Ibrahim Benabida</tspan>.</text>
+  </g>
+
+  <!-- Line 4: Body text 2 -->
+  <g>
+    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.44;0.50;0.94;1" dur="14s" repeatCount="indefinite"/>
+    <text x="168" y="208" font-size="20" fill="#D4A373">Fork it, learn from it, make it yours.</text>
+  </g>
+
+  <!-- Line 6: Comment -->
+  <g>
+    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.52;0.58;0.94;1" dur="14s" repeatCount="indefinite"/>
+    <text x="168" y="260" font-size="18" fill="#8A7E7B"># MIT licensed. Lines starting with '#' will be ignored.</text>
+  </g>
+</g>
+<rect x="40.5" y="20.5" width="1199" height="275" rx="13.5" fill="none" stroke="#3D3432" stroke-width="1.5"/>
 </svg>
