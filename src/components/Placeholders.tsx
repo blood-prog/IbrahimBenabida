@@ -119,55 +119,44 @@ export const HeroGenerativeCanvas: React.FC = () => {
   );
 };
 
-// Hero Portrait Placeholder (replacing photo with architectural vector study)
+// Hero Portrait (featuring real USTHB architectural photograph)
 export const HeroPortraitPlaceholder: React.FC = () => {
   return (
-    <div className="relative w-full h-full min-h-[260px] bg-gradient-to-br from-soft-linen via-[#dfd9ce] to-[#d6cfc3] dark:from-[#5a1212] dark:via-[#4a0f0f] dark:to-[#380b0b] p-6 flex flex-col justify-between overflow-hidden border-l border-grid">
-      {/* Background Architectural Markings */}
-      <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="grid-pat" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="0.8" className="text-graphite dark:text-soft-linen" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#grid-pat)" />
-        {/* Fibonacci / Geometric Contour */}
-        <circle cx="70%" cy="50%" r="120" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" className="text-terracotta dark:text-soft-linen" />
-        <circle cx="70%" cy="50%" r="80" fill="none" stroke="currentColor" strokeWidth="1" className="text-graphite dark:text-soft-linen" />
-        <line x1="0" y1="50%" x2="100%" y2="50%" stroke="currentColor" strokeWidth="0.5" strokeDasharray="3 3" className="text-graphite dark:text-soft-linen" />
-        <line x1="70%" y1="0" x2="70%" y2="100%" stroke="currentColor" strokeWidth="0.5" strokeDasharray="3 3" className="text-terracotta dark:text-soft-linen" />
-      </svg>
+    <div className="relative w-full h-full min-h-[300px] md:min-h-[380px] lg:min-h-[460px] overflow-hidden border-l border-grid group select-none">
+      <img
+        src="/profile/usthb-facade.jpg"
+        alt="USTHB Monumental Arches at Sunset"
+        className="w-full h-full object-cover object-[center_45%] group-hover:scale-105 transition-transform duration-700 ease-out"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30 pointer-events-none" />
 
       {/* Header technical coordinates */}
-      <div className="flex justify-between text-[10px] font-mono tracking-widest text-graphite/60 dark:text-soft-linen/70 z-10">
-        <span>[IMAGE PLACEHOLDER // 01]</span>
-        <span>FIG. A: PROFILE CONTOUR</span>
+      <div className="absolute top-4 left-4 right-4 flex justify-between text-[10px] font-mono tracking-widest text-soft-linen z-10">
+        <span className="bg-graphite/80 backdrop-blur-sm px-2.5 py-1 border border-white/20">USTHB ALGIERS // 36°45'N</span>
+        <span className="bg-graphite/80 backdrop-blur-sm px-2.5 py-1 border border-white/20">FIG. 01: ARCHITECTURAL STUDY</span>
       </div>
 
-      {/* Center aesthetic abstract representation */}
-      <div className="my-auto text-center z-10 py-6">
-        <div className="inline-block p-4 border border-terracotta/40 dark:border-soft-linen/40 bg-soft-linen/70 dark:bg-terracotta/80 backdrop-blur-sm shadow-sm">
-          <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center border border-graphite/30 dark:border-soft-linen/30">
-            <svg viewBox="0 0 40 40" className="w-10 h-10 stroke-terracotta dark:stroke-soft-linen fill-none" strokeWidth="1.5">
-              <circle cx="20" cy="15" r="7" />
-              <path d="M8 34 C8 24, 32 24, 32 34" />
-              <line x1="20" y1="2" x2="20" y2="6" className="stroke-graphite dark:stroke-soft-linen" />
-              <line x1="20" y1="34" x2="20" y2="38" className="stroke-graphite dark:stroke-soft-linen" />
-            </svg>
-          </div>
-          <p className="text-[11px] font-mono font-semibold tracking-wider text-graphite dark:text-soft-linen uppercase">
+      {/* Center aesthetic badge */}
+      <div className="absolute inset-0 flex items-center justify-center p-6 z-10 pointer-events-none">
+        <div className="inline-block p-4 border border-white/30 bg-black/60 backdrop-blur-md shadow-lg text-center transform group-hover:scale-105 transition-transform duration-300">
+          <p className="text-xs md:text-sm font-mono font-bold tracking-wider text-soft-linen uppercase">
             IBRAHIM BENABIDA
           </p>
-          <p className="text-[9px] font-mono tracking-widest text-terracotta dark:text-soft-linen/80 mt-0.5 uppercase font-medium">
-            DATA SCIENCE & DIGITAL DESIGN
+          <p className="text-[10px] font-mono tracking-widest text-terracotta dark:text-soft-linen/90 mt-1 uppercase font-semibold">
+            DATA SCIENCE UNDERGRADUATE &amp; DIGITAL DESIGNER
+          </p>
+          <p className="text-[9px] font-mono tracking-wider text-soft-linen/70 mt-1">
+            USTHB (FACULTY OF COMPUTER SCIENCE)
           </p>
         </div>
       </div>
 
       {/* Footer metadata */}
-      <div className="flex justify-between text-[9px] font-mono tracking-widest text-graphite/50 dark:text-soft-linen/50 z-10 border-t border-grid pt-2">
-        <span>36°45'N 3°03'E (ALGIERS)</span>
-        <span>RATIO: 16:9 • VECTOR</span>
+      <div className="absolute bottom-4 left-4 right-4 flex justify-between text-[9px] font-mono tracking-widest text-soft-linen z-10">
+        <span className="bg-graphite/80 backdrop-blur-sm px-2 py-1 border border-white/20">RATIO: 16:9 • PHOTOGRAPHY</span>
+        <span className="bg-terracotta/90 text-soft-linen px-2 py-1 uppercase tracking-wider font-semibold">
+          ROOTED INNOVATION
+        </span>
       </div>
     </div>
   );
@@ -271,96 +260,93 @@ export const AboutSectionPlaceholder: React.FC = () => {
   );
 };
 
-// Works Vertical Placeholder (replacing the photographer photo on the right of Selected Works)
+// Works Vertical (featuring Algiers park sunset photograph in 9:16 vertical ratio)
 export const WorksVerticalPlaceholder: React.FC = () => {
   return (
-    <div className="relative w-full h-full min-h-[480px] bg-gradient-to-b from-[#e5e0d6] via-[#ded7cb] to-[#d3ccbe] dark:from-[#5a1212] dark:via-[#4a0f0f] dark:to-[#380b0b] p-6 flex flex-col justify-between overflow-hidden border-t lg:border-t-0 lg:border-l border-grid">
-      <div className="flex justify-between text-[10px] font-mono tracking-widest text-graphite/60 dark:text-soft-linen/60 border-b border-grid pb-2">
-        <span>[IMAGE PLACEHOLDER // 03]</span>
-        <span>SELECTED EXHIBITION</span>
+    <div className="relative w-full h-full min-h-[480px] overflow-hidden border-t lg:border-t-0 lg:border-l border-grid group select-none">
+      <img
+        src="/profile/park-sunset.jpg"
+        alt="Algiers Park Meadow and Bench at Sunset"
+        className="w-full h-full object-cover object-[center_60%] group-hover:scale-105 transition-transform duration-700 ease-out"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30 pointer-events-none" />
+
+      <div className="absolute top-4 left-4 right-4 flex justify-between text-[10px] font-mono tracking-widest text-soft-linen z-10">
+        <span className="bg-graphite/80 backdrop-blur-sm px-2.5 py-1 border border-white/20">ALGIERS // PARK SUNSET</span>
+        <span className="bg-graphite/80 backdrop-blur-sm px-2.5 py-1 border border-white/20">STUDY // 02</span>
       </div>
 
-      <div className="my-auto py-8 flex flex-col items-center">
-        {/* Abstract 3D Cube / Perspective Diagram */}
-        <svg viewBox="0 0 160 160" className="w-36 h-36 stroke-graphite dark:stroke-soft-linen fill-none" strokeWidth="1.2">
-          {/* Isometric Cube */}
-          <polygon points="80,20 140,55 80,90 20,55" className="stroke-terracotta dark:stroke-soft-linen fill-terracotta/10 dark:fill-soft-linen/10" />
-          <polygon points="20,55 80,90 80,145 20,110" />
-          <polygon points="80,90 140,55 140,110 80,145" className="fill-graphite/5 dark:fill-soft-linen/5" />
-          {/* Interior guidelines */}
-          <line x1="80" y1="20" x2="80" y2="145" className="stroke-terracotta dark:stroke-soft-linen" strokeDasharray="3 3" />
-        </svg>
-
-        <span className="mt-6 text-[10px] font-mono tracking-widest text-terracotta dark:text-soft-linen font-semibold uppercase">
-          DISCIPLINARY CONVERGENCE
+      <div className="absolute bottom-4 left-4 right-4 z-10 flex justify-between items-end">
+        <div className="bg-graphite/85 backdrop-blur-sm p-3.5 border border-white/20">
+          <span className="block text-xs font-mono font-bold text-soft-linen uppercase tracking-wider">
+            GOLDEN SOLITUDE
+          </span>
+          <span className="block text-[9px] font-mono text-terracotta dark:text-soft-linen/90 tracking-widest mt-1">
+            NATURAL RATIO 9:16 • 35MM
+          </span>
+        </div>
+        <span className="bg-terracotta/90 text-soft-linen text-[9px] font-mono px-2 py-1 uppercase tracking-wider font-semibold">
+          SELECTED
         </span>
-        <span className="text-[9px] font-mono tracking-wider text-graphite/60 dark:text-soft-linen/70 mt-1 text-center max-w-[200px]">
-          DATA SCIENCE × BRAND IDENTITY × FRONTEND
-        </span>
-      </div>
-
-      <div className="text-[9px] font-mono text-graphite/50 dark:text-soft-linen/50 border-t border-grid pt-2 flex justify-between">
-        <span>RATIO: 9:16 VERTICAL</span>
-        <span>INDEX: 01 — 03</span>
       </div>
     </div>
   );
 };
 
-// Contact Placeholder (replacing photo in 'chat?' section)
+// Contact Placeholder (featuring twilight waters photograph)
 export const ContactPlaceholder: React.FC = () => {
   return (
-    <div className="relative w-full h-full min-h-[340px] bg-gradient-to-tr from-[#ded7ca] via-[#e5dfd4] to-[#ece7dc] dark:from-[#5a1212] dark:via-[#4a0f0f] dark:to-[#380b0b] p-6 flex flex-col justify-between overflow-hidden border-t md:border-t-0 md:border-l border-grid">
-      <div className="flex justify-between text-[10px] font-mono tracking-widest text-graphite/60 dark:text-soft-linen/60 border-b border-grid pb-2">
-        <span>[IMAGE PLACEHOLDER // 04]</span>
-        <span>DIRECT ENGAGEMENT</span>
+    <div className="relative w-full h-full min-h-[340px] overflow-hidden border-t md:border-t-0 md:border-l border-grid group select-none">
+      <img
+        src="/profile/lake-twilight.jpg"
+        alt="Lake at twilight with reflections"
+        className="w-full h-full object-cover object-[center_70%] group-hover:scale-105 transition-transform duration-700 ease-out"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/30 pointer-events-none" />
+
+      <div className="absolute top-4 left-4 right-4 flex justify-between text-[10px] font-mono tracking-widest text-soft-linen z-10">
+        <span className="bg-graphite/80 backdrop-blur-sm px-2.5 py-1 border border-white/20">TWILIGHT WATERS</span>
+        <span className="bg-graphite/80 backdrop-blur-sm px-2.5 py-1 border border-white/20">STUDY // 03</span>
       </div>
 
-      <div className="my-auto text-center py-6">
-        <div className="inline-block p-5 border border-dashed border-graphite/40 dark:border-soft-linen/40 bg-soft-linen/90 dark:bg-terracotta/90">
-          <svg className="w-12 h-12 mx-auto stroke-terracotta dark:stroke-soft-linen fill-none mb-3" viewBox="0 0 24 24" strokeWidth="1.5">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0017.25 4.5h-10.5A2.25 2.25 0 004.5 6.75m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-          </svg>
-          <span className="block text-xs font-mono font-bold text-graphite dark:text-soft-linen tracking-wider uppercase">
+      <div className="absolute bottom-4 left-4 right-4 z-10 flex justify-between items-end">
+        <div className="bg-graphite/85 backdrop-blur-sm p-3.5 border border-white/20">
+          <span className="block text-xs font-mono font-bold text-soft-linen tracking-wider uppercase">
             OPEN FOR COLLABORATION
           </span>
-          <span className="block text-[9px] font-mono text-terracotta dark:text-soft-linen/80 tracking-widest mt-1">
-            CLIENT PROJECTS & RESEARCH
+          <span className="block text-[9px] font-mono text-terracotta dark:text-soft-linen/90 tracking-widest mt-1">
+            CET (UTC+1) • ALGIERS
           </span>
         </div>
-      </div>
-
-      <div className="flex justify-between text-[9px] font-mono tracking-widest text-graphite/50 dark:text-soft-linen/50 border-t border-grid pt-2">
-        <span>TIMEZONE: CET (UTC+1)</span>
-        <span>STATUS: AVAILABLE</span>
+        <span className="bg-terracotta/90 text-soft-linen text-[9px] font-mono px-2 py-1 uppercase tracking-wider font-semibold">
+          AVAILABLE
+        </span>
       </div>
     </div>
   );
 };
 
 // Works Hero Placeholder: Circular "BY ME" Badge + Creator with Camera Silhouette (Screenshot 1)
+// Works Hero (featuring Golden Forest photograph in 35mm composition with spinning vinyl badge)
 export const WorksHeroPlaceholder: React.FC = () => {
   return (
-    <div className="relative w-full h-full min-h-[420px] lg:min-h-[520px] bg-[#161413] dark:bg-[#120e0e] text-soft-linen p-6 md:p-8 flex flex-col justify-between overflow-hidden select-none">
-      {/* Background Subtle Technical Grid */}
-      <svg className="absolute inset-0 w-full h-full opacity-15 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="works-grid" width="36" height="36" patternUnits="userSpaceOnUse">
-            <path d="M 36 0 L 0 0 0 36" fill="none" stroke="#e8e3d9" strokeWidth="0.8" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#works-grid)" />
-      </svg>
+    <div className="relative w-full h-full min-h-[420px] lg:min-h-[520px] overflow-hidden select-none group">
+      <img
+        src="/profile/golden-forest.jpg"
+        alt="Golden Pine Forest Canopy"
+        className="w-full h-full object-cover object-[center_50%] group-hover:scale-105 transition-transform duration-700 ease-out"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/35 pointer-events-none" />
 
       {/* Top Spec Header */}
-      <div className="flex justify-between items-center text-[10px] font-mono tracking-widest text-soft-linen/70 z-10 border-b border-white/10 pb-2">
-        <span>[IMAGE PLACEHOLDER // WORKS HERO]</span>
-        <span>REF: 01 // 35MM FRAMING</span>
+      <div className="absolute top-4 left-4 right-4 flex justify-between items-center text-[10px] font-mono tracking-widest text-soft-linen z-10">
+        <span className="bg-graphite/80 backdrop-blur-sm px-2.5 py-1 border border-white/20">GOLDEN FOREST // 35MM</span>
+        <span className="bg-graphite/80 backdrop-blur-sm px-2.5 py-1 border border-white/20">STUDY // 04</span>
       </div>
 
-      {/* Centerpiece: Spinning Vinyl Badge and Camera Silhouette */}
+      {/* Centerpiece: Spinning Vinyl Badge and Viewfinder */}
       <div className="relative my-auto flex items-center justify-center py-6 z-10">
-        {/* Circular "• BY ME • BY ME • BY ME •" Vinyl Badge */}
+        {/* Circular Vinyl Badge */}
         <div className="absolute w-64 h-64 md:w-80 md:h-80 -top-6 -right-6 md:right-4 opacity-90 pointer-events-none">
           <svg viewBox="0 0 200 200" className="w-full h-full animate-[spin_35s_linear_infinite]">
             <defs>
@@ -369,65 +355,45 @@ export const WorksHeroPlaceholder: React.FC = () => {
                 d="M 100, 100 m -76, 0 a 76,76 0 1,1 152,0 a 76,76 0 1,1 -152,0"
               />
             </defs>
-            {/* Record Grooves */}
-            <circle cx="100" cy="100" r="92" fill="#c2cfb8" stroke="#5a1212" strokeWidth="1.5" />
-            <circle cx="100" cy="100" r="82" fill="none" stroke="#5a1212" strokeWidth="0.8" strokeDasharray="2 3" opacity="0.6" />
-            <circle cx="100" cy="100" r="72" fill="none" stroke="#5a1212" strokeWidth="0.8" opacity="0.5" />
-            <circle cx="100" cy="100" r="62" fill="none" stroke="#5a1212" strokeWidth="0.8" opacity="0.4" />
-            <circle cx="100" cy="100" r="50" fill="none" stroke="#5a1212" strokeWidth="1" opacity="0.7" />
-            <circle cx="100" cy="100" r="16" fill="#5a1212" />
-            {/* Circular Typography */}
-            <text className="font-mono text-[9.5px] tracking-[0.24em] font-bold fill-[#5a1212] uppercase">
+            <circle cx="100" cy="100" r="92" fill="rgba(30, 27, 26, 0.85)" stroke="#e8e3d9" strokeWidth="1.5" />
+            <circle cx="100" cy="100" r="82" fill="none" stroke="#e8e3d9" strokeWidth="0.8" strokeDasharray="2 3" opacity="0.6" />
+            <circle cx="100" cy="100" r="72" fill="none" stroke="#e8e3d9" strokeWidth="0.8" opacity="0.5" />
+            <circle cx="100" cy="100" r="28" fill="#5a1212" stroke="#e8e3d9" strokeWidth="1.5" />
+            <circle cx="100" cy="100" r="6" fill="#e8e3d9" />
+            <text className="font-mono text-[9px] tracking-[0.24em] font-bold fill-soft-linen uppercase">
               <textPath href="#badgeCircle" startOffset="0%">
-                • BY ME • BY ME • BY ME • BY ME • BY ME • BY ME
+                • BY IBRAHIM • PORTFOLIO • BY IBRAHIM • PORTFOLIO
               </textPath>
             </text>
           </svg>
         </div>
 
-        {/* Creator with Camera Graphic Contour */}
+        {/* Framing Glass Tag */}
         <div className="relative z-20 flex flex-col items-center">
-          <div className="relative w-48 h-60 md:w-56 md:h-72 border border-white/20 bg-black/40 backdrop-blur-sm p-4 flex flex-col justify-between shadow-2xl">
+          <div className="relative w-48 h-60 md:w-56 md:h-72 border border-white/30 bg-black/55 backdrop-blur-md p-4 flex flex-col justify-between shadow-2xl">
             {/* Viewfinder Target Brackets */}
             <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-white/70" />
             <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-white/70" />
             <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-white/70" />
             <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-white/70" />
 
-            <div className="flex justify-between text-[8px] font-mono text-soft-linen/60 uppercase">
+            <div className="flex justify-between text-[8px] font-mono text-soft-linen/80 uppercase">
               <span>AF-LOCK</span>
-              <span className="text-red-400 font-bold">● REC</span>
+              <span className="text-red-400 font-bold">● LIVE</span>
             </div>
 
-            {/* Stylized Silhouette & Camera Vector */}
-            <div className="my-auto flex flex-col items-center">
-              <svg viewBox="0 0 100 120" className="w-28 h-32 stroke-soft-linen fill-none" strokeWidth="1.6">
-                {/* Person Head & Cap Silhouette */}
-                <path d="M35 32 C35 20, 65 20, 65 32 C65 42, 35 42, 35 32 Z" fill="#2d2825" />
-                <path d="M30 28 Q50 18 70 28" strokeWidth="2.2" strokeLinecap="round" />
-                {/* Shoulders */}
-                <path d="M20 75 C20 45, 80 45, 80 75 L84 110 L16 110 Z" fill="#1f1b19" stroke="#e8e3d9" strokeWidth="1.2" />
-                {/* Camera Body & Lens */}
-                <rect x="36" y="52" width="42" height="28" rx="2" fill="#38322e" stroke="#e8e3d9" strokeWidth="1.8" />
-                <circle cx="57" cy="66" r="10" stroke="#e8e3d9" strokeWidth="2" fill="#1a1816" />
-                <circle cx="57" cy="66" r="4" fill="#ad4a3e" />
-                <rect x="42" y="47" width="10" height="5" fill="#e8e3d9" />
-                {/* Hands holding camera */}
-                <path d="M30 68 Q34 60 40 64" strokeWidth="2" strokeLinecap="round" />
-                <path d="M78 64 Q82 60 84 72" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-              <div className="text-[10px] font-mono tracking-widest text-soft-linen uppercase mt-2 font-semibold">
-                CREATOR PORTRAIT
+            <div className="my-auto flex flex-col items-center text-center">
+              <div className="text-[11px] font-mono tracking-widest text-soft-linen uppercase font-bold">
+                FOREST CANOPY
               </div>
-              <div className="text-[8px] font-mono tracking-wider text-soft-linen/50">
-                PHOTO PLACEHOLDER
+              <div className="text-[8px] font-mono tracking-wider text-terracotta dark:text-soft-linen/90 mt-1 uppercase">
+                ALGIERS NATURAL HABITAT
               </div>
             </div>
 
-            {/* Camera Viewfinder Overlay Metrics */}
-            <div className="flex justify-between text-[8px] font-mono text-soft-linen/70 border-t border-white/10 pt-1.5">
-              <span>f/2.8 • 1/250s</span>
-              <span>ISO 400</span>
+            <div className="flex justify-between text-[8px] font-mono text-soft-linen/70 border-t border-white/20 pt-1.5">
+              <span>f/2.8 • 1/500s</span>
+              <span>ISO 200</span>
               <span>35mm</span>
             </div>
           </div>
@@ -435,10 +401,10 @@ export const WorksHeroPlaceholder: React.FC = () => {
       </div>
 
       {/* Bottom Technical Grid */}
-      <div className="flex justify-between items-center text-[9px] font-mono tracking-widest text-soft-linen/60 z-10 border-t border-white/10 pt-2">
-        <span>ASPECT: 1:1 RATIO</span>
-        <span>LOCATION: ALGIERS / GLOBAL</span>
-        <span>STATUS: PLACEHOLDER</span>
+      <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center text-[9px] font-mono tracking-widest text-soft-linen z-10">
+        <span className="bg-graphite/80 backdrop-blur-sm px-2 py-1 border border-white/20">ASPECT: 1:1 RATIO</span>
+        <span className="bg-graphite/80 backdrop-blur-sm px-2 py-1 border border-white/20">LOCATION: ALGIERS</span>
+        <span className="bg-terracotta/90 text-soft-linen px-2 py-1 uppercase tracking-wider font-semibold">VERIFIED</span>
       </div>
     </div>
   );
@@ -651,78 +617,38 @@ export const WorkGridPlaceholder: React.FC<{
 };
 
 // Contact Hero Placeholder: Colorful Street Mural Graphic (Screenshot 4)
+// Contact Hero (featuring USTHB Campus architecture and palm trees)
 export const ContactHeroPlaceholder: React.FC = () => {
   return (
-    <div className="relative w-full h-full min-h-[380px] lg:min-h-[500px] bg-gradient-to-br from-[#d0c6b3] via-[#b8ac95] to-[#9e9178] dark:from-[#450e0e] dark:via-[#360808] dark:to-[#220404] p-6 md:p-8 flex flex-col justify-between overflow-hidden select-none border-t lg:border-t-0 lg:border-l border-grid">
-      {/* Background Brick & Street Mural Guidelines */}
-      <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="brick-pat" width="60" height="30" patternUnits="userSpaceOnUse">
-            <rect width="60" height="30" fill="none" stroke="currentColor" strokeWidth="0.8" className="text-graphite dark:text-soft-linen" />
-            <line x1="30" y1="0" x2="30" y2="15" stroke="currentColor" strokeWidth="0.8" className="text-graphite dark:text-soft-linen" />
-            <line x1="0" y1="15" x2="60" y2="15" stroke="currentColor" strokeWidth="0.8" className="text-graphite dark:text-soft-linen" />
-            <line x1="0" y1="30" x2="60" y2="30" stroke="currentColor" strokeWidth="0.8" className="text-graphite dark:text-soft-linen" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#brick-pat)" />
-      </svg>
+    <div className="relative w-full h-full min-h-[380px] lg:min-h-[500px] overflow-hidden select-none border-t lg:border-t-0 lg:border-l border-grid group">
+      <img
+        src="/profile/usthb-campus.jpg"
+        alt="USTHB Campus View with Architecture and Palm Trees"
+        className="w-full h-full object-cover object-[center_60%] group-hover:scale-105 transition-transform duration-700 ease-out"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30 pointer-events-none" />
 
       {/* Top Spec Bar */}
-      <div className="flex justify-between items-center text-[10px] font-mono tracking-widest text-graphite/80 dark:text-soft-linen/80 z-10 border-b border-graphite/20 dark:border-soft-linen/20 pb-2">
-        <span>[IMAGE PLACEHOLDER // URBAN MURAL]</span>
-        <span>FIG. C: STREET ART & CANVASES</span>
+      <div className="absolute top-4 left-4 right-4 flex justify-between items-center text-[10px] font-mono tracking-widest text-soft-linen z-10">
+        <span className="bg-graphite/80 backdrop-blur-sm px-2.5 py-1 border border-white/20">USTHB CAMPUS // ALGIERS</span>
+        <span className="bg-graphite/80 backdrop-blur-sm px-2.5 py-1 border border-white/20">STUDY // 05</span>
       </div>
 
-      {/* Center: Vibrant Artistic Street Mural Representation */}
+      {/* Center: Clean Glass Tag */}
       <div className="relative my-auto flex flex-col items-center justify-center py-6 z-10">
-        <div className="w-full max-w-md border-2 border-graphite dark:border-soft-linen bg-white/70 dark:bg-black/50 backdrop-blur-sm p-4 md:p-6 shadow-xl">
-          {/* Mural Graphic Composition */}
-          <div className="relative w-full h-44 md:h-52 bg-[#337a8b] rounded-[2px] overflow-hidden border border-graphite/30 dark:border-soft-linen/30 flex items-center justify-center p-4">
-            {/* Colorful Graffiti / Mural Elements */}
-            <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_20%_30%,#e05d44_0%,transparent_50%),radial-gradient(circle_at_80%_70%,#f1c40f_0%,transparent_60%)]" />
-
-            {/* Stylized whimsical characters reminiscent of Seoul mural (Hippo, child, cartoon pizza) */}
-            <svg viewBox="0 0 240 120" className="w-full h-full" fill="none">
-              {/* Whimsical Hippo Silhouette */}
-              <ellipse cx="90" cy="70" rx="45" ry="30" fill="#e88294" stroke="#5a1212" strokeWidth="2" />
-              <circle cx="65" cy="55" r="7" fill="#5a1212" />
-              <path d="M45 70 C45 85, 110 85, 110 70" stroke="#5a1212" strokeWidth="2" fill="#fff" />
-              {/* Pizza slice in mouth */}
-              <polygon points="105,65 140,55 135,80" fill="#f4d03f" stroke="#5a1212" strokeWidth="1.5" />
-              {/* Cartoon character / friend */}
-              <circle cx="160" cy="50" r="18" fill="#f5b041" stroke="#5a1212" strokeWidth="2" />
-              <path d="M150 48 Q155 42 160 48" stroke="#5a1212" strokeWidth="1.5" strokeLinecap="round" />
-              <path d="M165 48 Q170 42 175 48" stroke="#5a1212" strokeWidth="1.5" strokeLinecap="round" />
-              <path d="M155 60 Q160 64 165 60" stroke="#5a1212" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-              <rect x="145" y="68" width="30" height="35" rx="3" fill="#2980b9" stroke="#5a1212" strokeWidth="2" />
-              {/* Street sign typography */}
-              <text x="25" y="105" className="font-mono text-[7px] font-bold fill-[#fff]">
-                URBAN VISUAL STUDY // ARCHIVE 2024
-              </text>
-            </svg>
-          </div>
-
-          <div className="mt-3 flex justify-between items-center text-graphite dark:text-soft-linen">
-            <div>
-              <p className="text-xs font-mono font-bold uppercase tracking-wider">
-                STREET MURAL PHOTOGRAPHY
-              </p>
-              <p className="text-[9px] font-mono text-terracotta dark:text-soft-linen/80 uppercase">
-                URBAN ART & CONTEMPORARY ENVIRONMENT
-              </p>
-            </div>
-            <span className="text-[9px] font-mono px-2 py-1 border border-graphite/40 dark:border-soft-linen/40 uppercase">
-              16:9 35MM
-            </span>
-          </div>
+        <div className="border border-white/30 bg-black/60 backdrop-blur-md p-6 max-w-sm text-center">
+          <p className="text-xs font-mono font-bold tracking-widest text-soft-linen uppercase">
+            CAMPUS &amp; RESEARCH ENVIRONMENT
+          </p>
+          <p className="text-[10px] font-mono tracking-wider text-terracotta dark:text-soft-linen/90 mt-1 uppercase">
+            FACULTY OF COMPUTER SCIENCE &amp; DATA SCIENCE
+          </p>
         </div>
       </div>
 
-      {/* Bottom Technical Grid */}
-      <div className="flex justify-between items-center text-[9px] font-mono tracking-widest text-graphite/70 dark:text-soft-linen/70 z-10 border-t border-graphite/20 dark:border-soft-linen/20 pt-2">
-        <span>STREET ARCHIVE // 2024</span>
-        <span>EXPOSURE: NATURAL LIGHT</span>
-        <span>STATUS: VERIFIED</span>
+      <div className="absolute bottom-4 left-4 right-4 z-10 flex justify-between items-end text-[10px] font-mono tracking-widest text-soft-linen">
+        <span className="bg-graphite/80 backdrop-blur-sm px-2 py-1 border border-white/20">TIMEZONE: CET (UTC+1)</span>
+        <span className="bg-graphite/80 backdrop-blur-sm px-2 py-1 border border-white/20">ALGIERS, DZ</span>
       </div>
     </div>
   );
