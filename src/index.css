@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Coolors Exported Palette - https://coolors.co/e8e3d9-5a1212-332d2b */
+:root {
+  --soft-linen: #e8e3d9;
+  --black-cherry: #5a1212;
+  --terracotta: #5a1212;
+  --graphite: #332d2b;
+  --page-bg: #e8e3d9;
+  --page-text: #332d2b;
+  --graphite-border: rgba(51, 45, 43, 0.25);
+  --graphite-border-strong: rgba(51, 45, 43, 0.9);
+}
+
+.dark {
+  --soft-linen: #e8e3d9;
+  --black-cherry: #5a1212;
+  --terracotta: #5a1212;
+  --graphite: #332d2b;
+  --page-bg: #5a1212;
+  --page-text: #e8e3d9;
+  --graphite-border: rgba(232, 227, 217, 0.25);
+  --graphite-border-strong: rgba(232, 227, 217, 0.85);
+}
+
+body {
+  background-color: var(--page-bg);
+  color: var(--page-text);
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom 1px architectural grid border helper */
+.border-grid {
+  border-color: var(--graphite-border);
+}
+
+.border-grid-strong {
+  border-color: var(--graphite-border-strong);
+}
+
+/* Theme Sweep Parallelogram Keyframes (-115% to 115% with skewX(-10deg)) */
+@keyframes themeSweep {
+  0% {
+    transform: translateX(-115%) skewX(-10deg);
+  }
+  100% {
+    transform: translateX(115%) skewX(-10deg);
+  }
+}
+
+.animate-theme-sweep {
+  animation: themeSweep 1000ms cubic-bezier(0.76, 0, 0.24, 1) forwards;
+  will-change: transform;
+}
+
+/* Smooth Marquee animations */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-marquee-fast {
+  display: flex;
+  width: max-content;
+  animation: marquee 16s linear infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--page-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--black-cherry);
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--soft-linen);
+}
+
+/* Subtle noise texture overlay */
+.bg-noise {
+  background-image: radial-gradient(rgba(51, 45, 43, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
