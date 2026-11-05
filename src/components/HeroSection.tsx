@@ -10,13 +10,15 @@ export const HeroSection: React.FC = () => {
       <div className="md:hidden relative w-full h-[calc(100dvh-3.5rem)] flex flex-col justify-end overflow-hidden bg-[#5A1212] select-none">
         {/* Full-bleed Portrait Image (User's custom portrait with integrated pattern) */}
         <img
-          src="/profile/ibrahim-cherry-portrait.webp"
+          src="/profile/ibrahim-cherry-portrait-mobile.webp"
+          srcSet="/profile/ibrahim-cherry-portrait-mobile.webp 450w, /profile/ibrahim-cherry-portrait.webp 686w"
+          sizes="(max-width: 640px) 100vw, 550px"
           alt="Ibrahim Benabida"
           fetchPriority="high"
           loading="eager"
           decoding="async"
-          width={550}
-          height={1024}
+          width={450}
+          height={671}
           className="absolute inset-0 w-full h-full object-cover object-[center_15%]"
         />
 

@@ -8,19 +8,20 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) 
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLDivElement>(null);
-  const [isDesktop, setIsDesktop] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(() =>
+    typeof window !== 'undefined' ? window.innerWidth >= 768 : false
+  );
 
   useEffect(() => {
     const checkDesktop = () => {
       setIsDesktop(window.innerWidth >= 768);
     };
-    checkDesktop();
-    window.addEventListener('resize', checkDesktop);
+    window.addEventListener('resize', checkDesktop, { passive: true });
     return () => window.removeEventListener('resize', checkDesktop);
   }, []);
 
   useEffect(() => {
-    if (!isDesktop) return;
+    if (!isDesktop || !containerRef.current) return;
 
     let rafId: number;
     let targetProgress = 0;
@@ -64,7 +65,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) 
       if (!containerRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
 
-      // Start animating when the about content area approaches reading focus (260px from top)
       const startThreshold = 260;
       const scrollRange = Math.max(cachedTextHeight * 1.1, 380);
       const scrolled = startThreshold - rect.top;
@@ -78,14 +78,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) 
       }
     };
 
-    // Defer initial layout read to next frame to prevent forced reflow during first paint
-    const initRaf = requestAnimationFrame(() => {
-      measureDimensions();
-      updateTarget();
-      currentProgress = targetProgress;
-      render();
-    });
-
     const handleScroll = () => {
       updateTarget();
     };
@@ -95,14 +87,30 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) 
       updateTarget();
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleResize);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          measureDimensions();
+          updateTarget();
+          currentProgress = targetProgress;
+          render();
+          window.addEventListener('scroll', handleScroll, { passive: true });
+          window.addEventListener('resize', handleResize, { passive: true });
+        } else {
+          window.removeEventListener('scroll', handleScroll);
+          window.removeEventListener('resize', handleResize);
+        }
+      },
+      { rootMargin: '250px 0px 250px 0px' }
+    );
+
+    observer.observe(containerRef.current);
 
     return () => {
-      cancelAnimationFrame(initRaf);
-      cancelAnimationFrame(rafId);
+      observer.disconnect();
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
+      if (rafId) cancelAnimationFrame(rafId);
     };
   }, [isDesktop]);
 
@@ -178,12 +186,14 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) 
                 {!isDesktop && (
                   <div className="w-full h-full relative overflow-hidden">
                     <img
-                      src="/profile/usthb-campus.webp"
+                      src="/profile/usthb-campus-mobile.webp"
+                      srcSet="/profile/usthb-campus-mobile.webp 498w, /profile/usthb-campus.webp 1024w"
+                      sizes="(max-width: 768px) 100vw, 843px"
                       alt="USTHB Faculty & Campus Grounds"
                       loading="lazy"
                       decoding="async"
-                      width={843}
-                      height={576}
+                      width={498}
+                      height={280}
                       className="w-full h-full object-cover object-[center_55%]"
                     />
                   </div>

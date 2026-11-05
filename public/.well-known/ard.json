@@ -1,0 +1,16 @@
+{
+  "$schema": "https://agenticresourcediscovery.org/schemas/v0.91/ard.json",
+  "entries": [
+    {
+      "identifier": "urn:air:ibrahimbenabida.online:portfolio:site-documentation",
+      "displayName": "Ibrahim Benabida Portfolio Context & Documentation",
+      "type": "text/markdown",
+      "url": "https://ibrahimbenabida.online/llms.txt",
+      "representativeQueries": [
+        "Who is Ibrahim Benabida?",
+        "What data science and digital design projects has Ibrahim Benabida built?",
+        "How can I contact Ibrahim Benabida?"
+      ]
+    }
+  ]
+}

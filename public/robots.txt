@@ -36,5 +36,6 @@ Allow: /
 
 # Sitemap & LLM declarations
 Sitemap: https://ibrahimbenabida.online/sitemap.xml
+Agentmap: https://ibrahimbenabida.online/.well-known/ard.json
 # LLMs specification: https://llmstxt.org
 # Machine-readable entity summary: https://ibrahimbenabida.online/llms.txt

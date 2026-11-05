@@ -1,6 +1,5 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { Header } from './components/Header';
-import { MenuModal } from './components/MenuModal';
 import { HeroSection } from './components/HeroSection';
 import { AboutSection } from './components/AboutSection';
 import { WorksSection } from './components/WorksSection';
@@ -9,7 +8,6 @@ import { ServicesSection } from './components/ServicesSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { ThemeTransition } from './components/ThemeTransition';
-import { LinksPage } from './components/LinksPage';
 import { Project } from './types';
 import { Analytics } from '@vercel/analytics/react';
 
@@ -19,6 +17,8 @@ const ContactPage = lazy(() => import('./components/ContactPage').then(m => ({ d
 const AboutModal = lazy(() => import('./components/AboutModal').then(m => ({ default: m.AboutModal })));
 const ProjectModal = lazy(() => import('./components/ProjectModal').then(m => ({ default: m.ProjectModal })));
 const ContactModal = lazy(() => import('./components/ContactModal').then(m => ({ default: m.ContactModal })));
+const MenuModal = lazy(() => import('./components/MenuModal').then(m => ({ default: m.MenuModal })));
+const LinksPage = lazy(() => import('./components/LinksPage').then(m => ({ default: m.LinksPage })));
 
 // Synchronously compute initial route from URL to avoid any flash of portfolio home
 const getInitialPage = (): 'home' | 'works' | 'contact' | 'links' => {
@@ -141,13 +141,15 @@ export const App: React.FC = () => {
       {/* Main Content Router */}
       <main className="flex-1 flex flex-col">
         {currentPage === 'links' && (
-          <LinksPage
-            darkMode={darkMode}
-            onToggleTheme={handleToggleTheme}
-            onNavigateHome={() => navigateTo('home')}
-            onNavigateWorks={() => navigateTo('works')}
-            onNavigateContact={() => navigateTo('contact')}
-          />
+          <Suspense fallback={<div className="min-h-screen bg-[#5A1212]" />}>
+            <LinksPage
+              darkMode={darkMode}
+              onToggleTheme={handleToggleTheme}
+              onNavigateHome={() => navigateTo('home')}
+              onNavigateWorks={() => navigateTo('works')}
+              onNavigateContact={() => navigateTo('contact')}
+            />
+          </Suspense>
         )}
 
         <Suspense fallback={<div className="min-h-screen bg-[var(--page-bg)]" />}>
@@ -193,11 +195,13 @@ export const App: React.FC = () => {
       {/* Interactive Modals (Rendered only when outside /links and when active) */}
       {currentPage !== 'links' && (
         <Suspense fallback={null}>
-          <MenuModal
-            isOpen={menuOpen}
-            onClose={() => setMenuOpen(false)}
-            onNavigate={navigateTo}
-          />
+          {menuOpen && (
+            <MenuModal
+              isOpen={menuOpen}
+              onClose={() => setMenuOpen(false)}
+              onNavigate={navigateTo}
+            />
+          )}
           {aboutModalOpen && (
             <AboutModal isOpen={aboutModalOpen} onClose={() => setAboutModalOpen(false)} />
           )}
