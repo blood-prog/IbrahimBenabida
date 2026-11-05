@@ -15,6 +15,7 @@ import { ThemeTransition } from './components/ThemeTransition';
 import { WorksPage } from './components/WorksPage';
 import { ContactPage } from './components/ContactPage';
 import { Project } from './types';
+import { Analytics } from '@vercel/analytics/react';
 
 export const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -167,6 +168,9 @@ export const App: React.FC = () => {
       <AboutModal isOpen={aboutModalOpen} onClose={() => setAboutModalOpen(false)} />
       <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
       <ContactModal isOpen={contactModalOpen} onClose={() => setContactModalOpen(false)} />
+
+      {/* Vercel Analytics */}
+      <Analytics />
     </div>
   );
 };
