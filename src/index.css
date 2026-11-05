@@ -25,11 +25,36 @@
   --graphite-border-strong: rgba(232, 227, 217, 0.85);
 }
 
+html {
+  overflow-x: clip;
+  width: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   background-color: var(--page-bg);
   color: var(--page-text);
   font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
+  width: 100%;
+  min-height: 100dvh;
+}
+
+/* Accessible focus-visible state using locked brand colors */
+:focus-visible {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 2px;
+}
+
+.dark :focus-visible {
+  outline-color: var(--soft-linen);
+}
+
+/* Minimum 16px font size on mobile inputs to eliminate iOS Safari auto-zoom */
+@media (max-width: 640px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
 }
 
 /* Custom 1px architectural grid border helper */
@@ -102,4 +127,73 @@ body {
 .bg-noise {
   background-image: radial-gradient(rgba(51, 45, 43, 0.05) 1px, transparent 0);
   background-size: 24px 24px;
+}
+
+/* ========================================================
+   ibrahim. Authentic Identity Pattern Systems
+   ======================================================== */
+.pattern-dots-subtle {
+  position: relative;
+  isolation: isolate;
+}
+.pattern-dots-subtle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-color: var(--black-cherry);
+  opacity: 0.12;
+  -webkit-mask: url("/patterns/web-tiles/tile-dots-mask.svg") repeat;
+          mask: url("/patterns/web-tiles/tile-dots-mask.svg") repeat;
+}
+.dark .pattern-dots-subtle::before {
+  background-color: var(--soft-linen);
+  opacity: 0.10;
+}
+
+.pattern-matrix-subtle {
+  position: relative;
+  isolation: isolate;
+}
+.pattern-matrix-subtle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-color: var(--black-cherry);
+  opacity: 0.13;
+  -webkit-mask: url("/patterns/web-tiles/tile-two-scale-mask.svg") repeat;
+          mask: url("/patterns/web-tiles/tile-two-scale-mask.svg") repeat;
+}
+.dark .pattern-matrix-subtle::before {
+  background-color: var(--soft-linen);
+  opacity: 0.10;
+}
+
+.pattern-rings-subtle {
+  position: relative;
+  isolation: isolate;
+}
+.pattern-rings-subtle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-color: var(--black-cherry);
+  opacity: 0.13;
+  -webkit-mask: url("/patterns/web-tiles/tile-rings-mask.svg") repeat;
+          mask: url("/patterns/web-tiles/tile-rings-mask.svg") repeat;
+}
+.dark .pattern-rings-subtle::before {
+  background-color: var(--soft-linen);
+  opacity: 0.10;
+}
+
+.pattern-fade::before {
+  -webkit-mask-image: linear-gradient(135deg, transparent 15%, #000 85%), url("/patterns/web-tiles/tile-two-scale-mask.svg");
+  -webkit-mask-composite: source-in;
+          mask-composite: intersect;
 }

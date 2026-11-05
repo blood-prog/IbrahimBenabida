@@ -1,0 +1,38 @@
+# Robots.txt for ibrahimbenabida.online
+# Allowing search engines and AI answer engines to index and cite portfolio content
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Explicit permissions for major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Explicit permissions for AI Search & Retrieval (ChatGPT, Perplexity, Claude, Gemini)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Sitemap declaration
+Sitemap: https://ibrahimbenabida.online/sitemap.xml

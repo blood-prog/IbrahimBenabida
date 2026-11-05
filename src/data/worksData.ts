@@ -79,13 +79,13 @@ export const featuredWork: WorkItem = {
     {
       image: '/works/tektoflow-web-4.png',
       title: 'Metrics & Production Value',
-      caption: 'Clear ROI communication and conversion-focused architecture',
+      caption: 'Performance metrics and structured service deliverables',
       alt: 'TektoFlow Metrics',
     },
     {
       image: '/works/tektoflow-web-5.png',
-      title: 'Conversion Funnel & Inquiries',
-      caption: 'Streamlined contact flow and automated appointment inquiry funnels',
+      title: 'Inquiry Workflow',
+      caption: 'Direct contact form and appointment scheduling interface',
       alt: 'TektoFlow Contact Form',
     },
   ],
@@ -165,7 +165,7 @@ export const allWorksData: WorkItem[] = [
     title: 'ALGO 1 Course Educational Platform',
     subtitle: 'DATA STRUCTURES & ALGORITHM SUITE',
     description:
-      'Interactive educational platform tailored to the official USTHB computer science curriculum. Structures complex algorithmic theories, code syntax breakdowns, and interactive lecture modules.',
+      'Interactive educational platform aligned with the official USTHB computer science curriculum. Structures complex algorithmic theories, code syntax breakdowns, and interactive lecture modules.',
     categories: ['FRONT-END', 'EDUCATION', 'DATA SCIENCE'],
     tags: ['ALGORITHMS', 'DATA STRUCTURES', 'USTHB CS', 'EDUCATION'],
     year: '2024',
@@ -437,7 +437,7 @@ export const allWorksData: WorkItem[] = [
     title: 'Smily Dental Social Media Suite',
     subtitle: 'POSTS & CAROUSEL VISUAL SYSTEM',
     description:
-      'High-conversion social media campaign visuals and informational carousels designed for modern dental healthcare, hygiene tips, and clinic promotion.',
+      'Social media visuals and informational carousels designed for dental healthcare and patient guidance.',
     categories: ['SOCIAL MEDIA', 'BRANDING'],
     tags: ['CAROUSELS', 'INSTAGRAM', 'HEALTHCARE PROMO', 'VISUAL DESIGN'],
     year: '2024',
@@ -467,7 +467,7 @@ export const allWorksData: WorkItem[] = [
       {
         image: '/works/smily-clinic-4.jpg',
         title: 'The Future Of Your Smile',
-        caption: 'Next-generation dental clinic hero poster with clean minimal layout',
+        caption: 'Dental clinic campaign poster with clean minimal layout',
         alt: 'Smily Future of Your Smile Poster',
       },
     ],
@@ -499,7 +499,7 @@ export const allWorksData: WorkItem[] = [
       {
         image: '/works/ascend-school-3.jpg',
         title: 'Free Intro Session Flyer',
-        caption: 'High-converting trial enrollment creative with booking incentive',
+        caption: 'Trial enrollment poster with scheduled class times',
       },
       {
         image: '/works/ascend-school-4.jpg',
@@ -559,23 +559,44 @@ export const allWorksData: WorkItem[] = [
     ],
   },
   {
-    id: 'ibrahim-personal-identity',
-    title: 'Ibrahim Personal Brand & System',
-    subtitle: 'ARCHITECTURAL GRID & MONOGRAM IDENTITY',
+    id: 'ibrahim-brand-identity',
+    title: 'Golden Angle Identity & Logo System',
+    subtitle: 'MATHEMATICAL SPIRAL & BRAND GUIDELINES',
     description:
-      'Bespoke personal brand identity unifying the signature hand-drawn mark, geometric "B." monogram, Black Cherry (#5A1212) and Soft Linen (#E8E3D9) architectural language.',
+      'Official brand identity system and guidelines for Ibrahim Benabida. Rooted in the 137.5° phyllotaxis golden angle, uniting computational data science with architectural typography.',
     categories: ['BRANDING', 'UI DESIGN'],
-    tags: ['PERSONAL BRAND', 'SIGNATURE LOGO', 'MONOGRAM', 'IDENTITY SYSTEM'],
-    year: '2024',
+    tags: ['GOLDEN ANGLE', 'DATA SCIENCE', 'BRAND GUIDELINES', 'LOGO SYSTEM'],
+    year: '2026',
     client: 'Ibrahim Benabida',
-    image: '/logo-ibrahim.jpg',
+    metric: 'Complete Brand Manual & Golden Angle Vector System',
+    image: '/brand/golden-angle-clear-space.svg',
     status: 'COMPLETED',
     span: 'col-span-1',
     gallery: [
       {
-        image: '/logo-ibrahim.jpg',
-        title: 'Signature Hand-Drawn Monogram & Mark',
-        caption: 'Unifying algorithmic logic with artistic expression in an iconic visual mark',
+        image: '/brand/golden-angle-badge-light.svg',
+        title: 'Golden Angle Symbol Mark',
+        caption: 'Phyllotaxis spiral based on the 137.5° golden ratio angle, symbolizing data distribution and algorithmic precision',
+      },
+      {
+        image: '/brand/ibrahim-full-logo.svg',
+        title: 'Full Brand Wordmark & Emblem',
+        caption: 'Harmonious lockup pairing the golden angle symbol with Plus Jakarta Sans geometry',
+      },
+      {
+        image: '/brand/golden-angle-clear-space.svg',
+        title: 'Logo Clear Space & Isolation Grid',
+        caption: 'Proportional construction rules and optical margins ensuring brand integrity across print and screen',
+      },
+      {
+        image: '/brand/golden-angle-badge-dark.svg',
+        title: 'Dark Mode Inversion & Color Tokens',
+        caption: 'Black Cherry (#5A1212) grounding paired with Soft Linen (#E8E3D9) high-contrast data nodes',
+      },
+      {
+        image: '/brand/golden-angle-detailed.svg',
+        title: 'High-Density Spiral Matrix',
+        caption: 'Algorithmic point dispersion mapping mathematical sequence progression',
       },
     ],
   },

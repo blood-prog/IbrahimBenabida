@@ -1,0 +1,39 @@
+/* ibrahim. brand patterns: drop-in CSS
+   Folder layout: patterns.css sits next to /web-tiles and /web-hero-1920x1080 */
+
+:root {
+  --black-cherry: #5A1212;
+  --graphite: #332D2B;
+  --soft-linen: #E8E3D9;
+  --paper: #F4F1EA;
+}
+
+/* 1. Full-bleed hero backgrounds (one SVG, scales cleanly) */
+.hero-bloom {
+  background: url("web-hero-1920x1080/svg/bloom_cherry-linen.svg") center / cover no-repeat;
+}
+
+/* 2. Seamless tiles, fixed colors */
+.bg-dots-on-cherry   { background: var(--black-cherry) url("web-tiles/tile-dots-linen.svg") repeat; }
+.bg-dots-on-linen    { background: var(--soft-linen)   url("web-tiles/tile-dots-cherry.svg") repeat; }
+.bg-rings-on-linen   { background: var(--soft-linen)   url("web-tiles/tile-rings-cherry.svg") repeat; }
+.bg-rings-on-graphite{ background: var(--graphite)     url("web-tiles/tile-rings-linen.svg") repeat; }
+
+/* 3. Tiles with adjustable color and strength (uses the -mask files).
+   Put the pattern on a pseudo-element so content stays at full opacity. */
+.patterned { position: relative; isolation: isolate; background: var(--soft-linen); }
+.patterned::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-color: var(--black-cherry);
+  opacity: .18;                                   /* dial 0.1 - 0.35 for text sections */
+  -webkit-mask: url("web-tiles/tile-two-scale-mask.svg") repeat;
+          mask: url("web-tiles/tile-two-scale-mask.svg") repeat;
+}
+.patterned.on-dark { background: var(--graphite); }
+.patterned.on-dark::before { background-color: var(--soft-linen); opacity: .12; }
+
+/* Fade the pattern out toward the text area */
+.patterned.fade::before {
+  -webkit-mask-image: linear-gradient(135deg, transparent 20%, #000), url("web-tiles/tile-two-scale-mask.svg");
+  -webkit-mask-composite: source-in; mask-composite: intersect;
+}

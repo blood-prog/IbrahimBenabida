@@ -3,12 +3,12 @@ import React from 'react';
 export const Marquee: React.FC = () => {
   const items = [
     'VIEW ALL WORKS',
-    'THE ANALYTICAL MIND',
+    'MATHEMATICAL MODELING',
     'DIGITAL DESIGN',
     'USTHB ALGIERS',
     'DATA SCIENCE UNDERGRADUATE',
-    'MODERN FRONTEND & REACT',
-    'VIBE CODING & AI WORKFLOWS',
+    'REACT & TYPESCRIPT',
+    'BRAND ARCHITECTURE',
     'ROOTED INNOVATION',
   ];
 

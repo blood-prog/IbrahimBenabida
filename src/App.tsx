@@ -105,7 +105,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--page-bg)] text-[var(--page-text)] flex flex-col font-sans transition-colors duration-0">
+    <div className="min-h-[100dvh] w-full overflow-x-clip bg-[var(--page-bg)] text-[var(--page-text)] flex flex-col font-sans transition-colors duration-0">
       {/* Sweeping Parallelogram Transition Overlay */}
       <ThemeTransition isTransitioning={isTransitioning} targetTheme={targetTheme} />
 

@@ -26,24 +26,15 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) 
     let targetProgress = 0;
     let currentProgress = 0;
     let isRunning = false;
-    let cachedSectionTop = 0;
-    let cachedTextHeight = 450;
-
-    const measureLayout = () => {
-      if (!containerRef.current || !textRef.current) return;
-      const rect = containerRef.current.getBoundingClientRect();
-      cachedSectionTop = rect.top + window.scrollY;
-      cachedTextHeight = textRef.current.offsetHeight;
-    };
+    let cachedTextHeight = 400;
 
     const render = () => {
       if (!imgRef.current) return;
 
       const diff = targetProgress - currentProgress;
 
-      if (Math.abs(diff) > 0.0002) {
-        // Silky smooth dampening factor for liquid, organic physics
-        currentProgress += diff * 0.075;
+      if (Math.abs(diff) > 0.0005) {
+        currentProgress += diff * 0.1;
         rafId = requestAnimationFrame(render);
         isRunning = true;
       } else {
@@ -51,7 +42,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) 
         isRunning = false;
       }
 
-      // Smoothstep curve for seamless acceleration and landing: 3p^2 - 2p^3
       const p = currentProgress;
       const eased = p * p * (3 - 2 * p);
 
@@ -65,13 +55,18 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) 
     };
 
     const updateTarget = () => {
-      // Paced scroll range for a relaxed, cinematic transition
-      const startTrigger = 180;
-      const scrollDistance = Math.max(cachedTextHeight * 1.1, 400);
+      if (!containerRef.current || !textRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      cachedTextHeight = textRef.current.offsetHeight;
 
-      const currentScroll = window.scrollY;
-      const scrolled = currentScroll - (cachedSectionTop - startTrigger);
-      targetProgress = Math.min(Math.max(scrolled / scrollDistance, 0), 1);
+      // Start animating when the about content area approaches reading focus (260px from top)
+      // and complete smoothly as the user scrolls through the reading block
+      const startThreshold = 260;
+      const scrollRange = Math.max(cachedTextHeight * 1.1, 380);
+      const scrolled = startThreshold - rect.top;
+      const progress = scrolled / scrollRange;
+
+      targetProgress = Math.min(Math.max(progress, 0), 1);
 
       if (!isRunning) {
         isRunning = true;
@@ -79,80 +74,93 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) 
       }
     };
 
-    const handleResize = () => {
-      measureLayout();
+    const handleScrollOrResize = () => {
       updateTarget();
     };
 
-    measureLayout();
     updateTarget();
     currentProgress = targetProgress;
     render();
 
-    window.addEventListener('scroll', updateTarget, { passive: true });
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleScrollOrResize, { passive: true });
+    window.addEventListener('resize', handleScrollOrResize);
 
     return () => {
       cancelAnimationFrame(rafId);
-      window.removeEventListener('scroll', updateTarget);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScrollOrResize);
+      window.removeEventListener('resize', handleScrollOrResize);
     };
   }, [isDesktop]);
 
   return (
-    <section id="about" className="text-graphite dark:text-soft-linen scroll-mt-16">
-      {/* 12-Column Grid with Gutters (1 col left, 10 cols center, 1 col right) */}
-      <div className="grid grid-cols-4 md:grid-cols-12">
-        <div className="col-span-4 md:col-span-10 md:col-start-2 border-x border-grid pt-16 md:pt-40 pb-0">
+    <section id="about" className="text-graphite dark:text-soft-linen scroll-mt-16 w-full overflow-hidden">
+      {/* 12-Column Grid with Gutters */}
+      <div className="grid grid-cols-1 md:grid-cols-12 min-w-0">
+        <div className="md:col-span-10 md:col-start-2 border-x border-grid py-10 md:py-20 min-w-0">
           
-          {/* Header Title Box: 'the' kicker + 'designer.' */}
-          <div className="grid grid-cols-4 md:grid-cols-10 border-b border-grid">
-            <div className="col-span-4 md:col-span-10 p-3 md:p-4">
-              <p className="mb-3 md:mb-4 text-[0.7rem] font-bold tracking-[0.18em] uppercase opacity-75 text-graphite dark:text-soft-linen">
-                the
-              </p>
-              <h2 className="text-5xl leading-[0.85] font-bold tracking-[-0.06em] md:text-7xl lg:text-8xl text-terracotta dark:text-soft-linen">
-                designer.
-              </h2>
-            </div>
+          {/* Header Title Box: pure typographic headline with visual rest */}
+          <div className="border-b border-grid p-4 sm:p-6 md:p-8">
+            <h2 className="text-[clamp(3rem,9vw,6.5rem)] leading-[0.9] font-bold tracking-tight text-terracotta dark:text-soft-linen">
+              designer.
+            </h2>
           </div>
 
           {/* Body Content Area */}
-          <div ref={containerRef} className="relative">
-            {/* Upper Grid: 4-cols Text + Button | 6-cols Empty Framed Cell */}
-            <div className="grid grid-cols-4 md:grid-cols-10 border-b border-grid">
+          <div ref={containerRef} className="relative min-w-0">
+            {/* Upper Grid: Text + Action */}
+            <div className="grid grid-cols-1 md:grid-cols-10 border-b border-grid">
               <div
                 ref={textRef}
-                className="col-span-4 md:col-span-4 border-r border-grid p-3 md:p-4 flex flex-col items-start gap-8 py-14 md:py-20 relative z-0"
+                className="md:col-span-4 border-b md:border-b-0 md:border-r border-grid p-5 sm:p-6 md:p-8 flex flex-col items-start gap-6 py-8 md:py-16 relative z-20 min-w-0"
               >
-                <p className="max-w-[46ch] text-lg md:text-xl leading-relaxed text-graphite dark:text-soft-linen font-normal">
-                  I’m a 19-year-old Data Science undergraduate based in Algiers, studying at USTHB, and a Digital Designer. Grounded in mathematical analysis, statistics, and logic, I bring rigorous analytical precision to visual storytelling. Instead of treating code, data, and design as isolated silos, I bridge them—turning complex data sets and mathematical principles into intuitive, aesthetically compelling digital realities.
+                <p className="max-w-[44ch] text-base sm:text-lg md:text-xl leading-relaxed text-graphite dark:text-soft-linen font-normal">
+                  I’m Ibrahim, a data science student at USTHB and digital designer based in Algiers. I build clean web applications and brand systems, combining analytical rigor with thoughtful typography and layout.
                 </p>
                 <button
                   type="button"
                   onClick={onOpenAboutModal}
-                  className="group/cta relative inline-block overflow-hidden border border-grid px-4 py-2 text-lg md:text-xl leading-[1.3] tracking-[0.06em] uppercase transition-colors hover:bg-terracotta hover:text-soft-linen hover:border-terracotta dark:hover:bg-soft-linen dark:hover:text-terracotta dark:hover:border-soft-linen cursor-pointer"
+                  aria-label="Read bio and profile"
+                  className="group/cta relative inline-flex items-center justify-center min-h-[48px] px-6 py-3 border border-grid text-sm sm:text-base tracking-wider uppercase transition-all duration-200 hover:bg-terracotta hover:text-soft-linen hover:border-terracotta dark:hover:bg-soft-linen dark:hover:text-terracotta dark:hover:border-soft-linen active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta dark:focus-visible:ring-soft-linen cursor-pointer overflow-hidden"
                 >
-                  <span className="block transition-transform duration-[450ms] ease-[cubic-bezier(0.65,0,0.35,1)] group-hover/cta:-translate-y-[200%]">
-                    learn more
+                  <span className="block transition-transform duration-[400ms] ease-[cubic-bezier(0.65,0,0.35,1)] group-hover/cta:-translate-y-[150%]">
+                    read bio
                   </span>
                   <span
                     aria-hidden="true"
-                    className="absolute inset-0 flex translate-y-full items-center justify-center transition-transform duration-[450ms] ease-[cubic-bezier(0.65,0,0.35,1)] group-hover/cta:translate-y-0"
+                    className="absolute inset-0 flex translate-y-full items-center justify-center transition-transform duration-[400ms] ease-[cubic-bezier(0.65,0,0.35,1)] group-hover/cta:translate-y-0"
                   >
-                    learn more
+                    read bio
                   </span>
                 </button>
+
+                {/* Dossier Coordinate Seal with Orbit Pattern Shape */}
+                <div className="pt-2 flex items-center gap-3 text-[11px] font-mono tracking-wider text-graphite/60 dark:text-soft-linen/60 border-t border-grid/60 w-full select-none">
+                  <div className="w-7 h-7 rounded-full overflow-hidden border border-grid shrink-0 opacity-75">
+                    <img
+                      src="/patterns/web-hero-1920x1080/svg/orbit_linen-cherry.svg"
+                      alt=""
+                      className="w-full h-full object-cover block dark:hidden"
+                      aria-hidden="true"
+                    />
+                    <img
+                      src="/patterns/web-hero-1920x1080/svg/orbit_cherry-linen.svg"
+                      alt=""
+                      className="w-full h-full object-cover hidden dark:block"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <span className="truncate">USTHB • 36.7135° N, 3.1813° E</span>
+                </div>
               </div>
 
-              {/* Upper Right 6-column Framed Cell (Space for initial image placement) */}
-              <div className="col-span-4 md:col-span-6 min-h-[220px] md:min-h-[300px]"></div>
+              {/* Upper Right Spacer (Desktop reservation for initial image) */}
+              <div className="hidden md:block md:col-span-6 min-h-[300px]"></div>
             </div>
 
-            {/* Lower Grid: Full-Width 10-column Landing Frame for the expanded image */}
-            <div className="grid grid-cols-4 md:grid-cols-10 border-b border-grid">
-              <div className="col-span-4 md:col-span-10 h-[380px] md:h-[520px] lg:h-[600px] relative">
-                {/* On mobile, image is displayed in natural document flow */}
+            {/* Lower Grid: Landing Frame for image */}
+            <div className="grid grid-cols-1 md:grid-cols-10 border-b border-grid">
+              <div className="md:col-span-10 h-[280px] sm:h-[380px] md:h-[520px] lg:h-[600px] relative overflow-hidden">
+                {/* On mobile, natural document flow */}
                 {!isDesktop && (
                   <div className="w-full h-full relative overflow-hidden">
                     <img
@@ -165,11 +173,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) 
               </div>
             </div>
 
-            {/* Desktop Dynamic Scroll-Expanding Image (Layered in front of text and grid lines) */}
+            {/* Desktop Dynamic Scroll-Expanding Image */}
             {isDesktop && (
               <div
                 ref={imgRef}
-                className="absolute z-30 border-l border-r border-b border-grid overflow-hidden h-[380px] md:h-[520px] lg:h-[600px] shadow-md bg-[var(--page-bg)]"
+                className="absolute z-30 border-l border-r border-b border-grid overflow-hidden h-[380px] md:h-[520px] lg:h-[600px] bg-[var(--page-bg)]"
                 style={{
                   left: '40%',
                   width: '60%',

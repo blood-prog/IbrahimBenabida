@@ -341,14 +341,19 @@ const CD_CSS = `
   border: 1px solid var(--cd-line);
   background: transparent;
   color: inherit;
-  width: 34px;
-  height: 34px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
   border-radius: 2px;
   display: grid;
   place-items: center;
   cursor: pointer;
   flex: none;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+}
+.cd-btn:active {
+  transform: scale(0.96);
 }
 .cd-btn:hover {
   background: var(--cd-ink);
