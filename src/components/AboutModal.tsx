@@ -49,7 +49,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
           <div className="bg-soft-linen/70 dark:bg-black/15 border border-grid p-4 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 pattern-matrix-subtle">
             <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-terracotta dark:border-soft-linen shrink-0 shadow-sm">
               <img
-                src="/profile/ibrahim-cherry-portrait.jpg"
+                src="/profile/ibrahim-cherry-portrait.webp"
                 alt="Ibrahim Benabida"
                 className="w-full h-full object-cover object-[center_20%]"
               />

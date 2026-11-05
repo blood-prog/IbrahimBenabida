@@ -47,6 +47,10 @@ export const WorksSection: React.FC<WorksSectionProps> = ({
           <img
             src={project.image}
             alt={project.title}
+            loading="lazy"
+            decoding="async"
+            width={600}
+            height={400}
             className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 ease-out"
           />
         </div>
@@ -59,6 +63,10 @@ export const WorksSection: React.FC<WorksSectionProps> = ({
           <img
             src={project.image}
             alt={project.title}
+            loading="lazy"
+            decoding="async"
+            width={600}
+            height={400}
             className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 ease-out"
           />
         </div>
@@ -70,6 +78,10 @@ export const WorksSection: React.FC<WorksSectionProps> = ({
         <img
           src={project.image}
           alt={project.title}
+          loading="lazy"
+          decoding="async"
+          width={600}
+          height={400}
           className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 ease-out"
         />
       </div>

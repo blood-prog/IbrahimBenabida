@@ -54,13 +54,17 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) 
       imgRef.current.style.top = `${top}px`;
     };
 
+    const measureDimensions = () => {
+      if (textRef.current) {
+        cachedTextHeight = textRef.current.offsetHeight || 400;
+      }
+    };
+
     const updateTarget = () => {
-      if (!containerRef.current || !textRef.current) return;
+      if (!containerRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
-      cachedTextHeight = textRef.current.offsetHeight;
 
       // Start animating when the about content area approaches reading focus (260px from top)
-      // and complete smoothly as the user scrolls through the reading block
       const startThreshold = 260;
       const scrollRange = Math.max(cachedTextHeight * 1.1, 380);
       const scrolled = startThreshold - rect.top;
@@ -74,21 +78,31 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) 
       }
     };
 
-    const handleScrollOrResize = () => {
+    // Defer initial layout read to next frame to prevent forced reflow during first paint
+    const initRaf = requestAnimationFrame(() => {
+      measureDimensions();
+      updateTarget();
+      currentProgress = targetProgress;
+      render();
+    });
+
+    const handleScroll = () => {
       updateTarget();
     };
 
-    updateTarget();
-    currentProgress = targetProgress;
-    render();
+    const handleResize = () => {
+      measureDimensions();
+      updateTarget();
+    };
 
-    window.addEventListener('scroll', handleScrollOrResize, { passive: true });
-    window.addEventListener('resize', handleScrollOrResize);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleResize);
 
     return () => {
+      cancelAnimationFrame(initRaf);
       cancelAnimationFrame(rafId);
-      window.removeEventListener('scroll', handleScrollOrResize);
-      window.removeEventListener('resize', handleScrollOrResize);
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
     };
   }, [isDesktop]);
 
@@ -164,8 +178,12 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) 
                 {!isDesktop && (
                   <div className="w-full h-full relative overflow-hidden">
                     <img
-                      src="/profile/usthb-campus.jpg"
+                      src="/profile/usthb-campus.webp"
                       alt="USTHB Faculty & Campus Grounds"
+                      loading="lazy"
+                      decoding="async"
+                      width={843}
+                      height={576}
                       className="w-full h-full object-cover object-[center_55%]"
                     />
                   </div>
@@ -187,8 +205,12 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) 
                 }}
               >
                 <img
-                  src="/profile/usthb-campus.jpg"
+                  src="/profile/usthb-campus.webp"
                   alt="USTHB Faculty & Campus Grounds"
+                  loading="lazy"
+                  decoding="async"
+                  width={843}
+                  height={576}
                   className="w-full h-full object-cover object-[center_55%]"
                 />
               </div>

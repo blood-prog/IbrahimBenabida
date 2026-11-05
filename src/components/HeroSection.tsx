@@ -10,8 +10,13 @@ export const HeroSection: React.FC = () => {
       <div className="md:hidden relative w-full h-[calc(100dvh-3.5rem)] flex flex-col justify-end overflow-hidden bg-[#5A1212] select-none">
         {/* Full-bleed Portrait Image (User's custom portrait with integrated pattern) */}
         <img
-          src="/profile/ibrahim-cherry-portrait.jpg"
+          src="/profile/ibrahim-cherry-portrait.webp"
           alt="Ibrahim Benabida"
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
+          width={550}
+          height={1024}
           className="absolute inset-0 w-full h-full object-cover object-[center_15%]"
         />
 
@@ -56,8 +61,12 @@ export const HeroSection: React.FC = () => {
           {/* Left Visual: Wide Architectural Rectangle (USTHB Arches & Grounds) */}
           <div className="col-span-8 relative h-full overflow-hidden border-r border-grid min-w-0 group">
             <img
-              src="/profile/usthb-arches-lawn.jpg"
+              src="/profile/usthb-arches-lawn.webp"
               alt="USTHB Architectural Arches and Campus Grounds"
+              loading="eager"
+              decoding="async"
+              width={843}
+              height={576}
               className="w-full h-full object-cover object-[center_62%] group-hover:scale-[1.02] transition-transform duration-700 ease-out"
             />
           </div>
@@ -65,8 +74,12 @@ export const HeroSection: React.FC = () => {
           {/* Right Visual: Smaller Compact Frame with Unusual Ratio (Lake Twilight) */}
           <div className="col-span-4 relative h-full overflow-hidden min-w-0 group bg-soft-linen/40 dark:bg-black/20">
             <img
-              src="/profile/lake-twilight.jpg"
+              src="/profile/lake-twilight.webp"
               alt="Twilight Lake Study in Algiers"
+              loading="eager"
+              decoding="async"
+              width={420}
+              height={576}
               className="w-full h-full object-cover object-[center_60%] group-hover:scale-[1.02] transition-transform duration-700 ease-out"
             />
           </div>

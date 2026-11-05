@@ -92,7 +92,7 @@ export const WorksPage: React.FC<WorksPageProps> = ({ onSelectProject }) => {
     if (work.id === 'ibrahim-brand-identity') {
       return (
         <div className="w-full h-full flex items-center justify-center p-3 sm:p-5 bg-[#E8E3D9] dark:bg-[#2A2422] pattern-dots-subtle">
-          <img
+          <img loading="lazy" decoding="async"
             src={work.image}
             alt={work.title}
             className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 ease-out"
@@ -104,8 +104,8 @@ export const WorksPage: React.FC<WorksPageProps> = ({ onSelectProject }) => {
     if (work.id === 'product-design-transformation') {
       return (
         <div className="w-full h-full flex items-center justify-center p-2 sm:p-3 bg-[#E5DFD5] dark:bg-[#221C1A]">
-          <img
-            src={work.image || '/works/rudys-shampoo-after.jpg'}
+          <img loading="lazy" decoding="async"
+            src={work.image || '/works/rudys-shampoo-after.webp'}
             alt={work.title}
             className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 ease-out"
           />
@@ -116,7 +116,7 @@ export const WorksPage: React.FC<WorksPageProps> = ({ onSelectProject }) => {
     if (work.image) {
       return (
         <div className="w-full h-full flex items-center justify-center p-1.5 sm:p-2 bg-soft-linen/50 dark:bg-black/30">
-          <img
+          <img loading="lazy" decoding="async"
             src={work.image}
             alt={work.title}
             className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 ease-out"

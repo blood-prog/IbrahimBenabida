@@ -1,26 +1,21 @@
-# Ibrahim Benabida — Data Scientist & Digital Designer
+# Ibrahim Benabida
 
-> Official machine-readable entity profile for Ibrahim Benabida (`ibrahim.`).
-> Website: https://ibrahimbenabida.online
-> Contact: email.me@ibrahimbenabida.online
+> Ibrahim Benabida is a Data Science undergraduate at USTHB (Algiers) and Digital Designer bridging analytical computing, mathematical modeling, and refined frontend engineering.
 
-## Summary
-Ibrahim Benabida is a 19-year-old Data Science undergraduate at USTHB (University of Science and Technology Houari Boumediene) and a digital designer based in Algiers, Algeria. He bridges analytical computing, machine learning, and mathematical modeling with refined visual design systems and frontend engineering.
+## Core Pages
 
-## Key Disciplines & Expertise
-- **Data Science & Machine Learning**: Mathematical modeling, statistical analysis, algorithmic optimization, Python computational stacks.
-- **Visual Design & Brand Systems**: 137.5° phyllotaxis golden angle identity systems, typography hierarchies, grid systems, high-contrast palette design.
-- **Frontend Engineering**: Production web development with React 19, TypeScript, and Tailwind CSS; fluid responsive layouts, micro-interactions, zero horizontal scroll.
+- [Main Portfolio](https://ibrahimbenabida.online/): Official portfolio showcasing analytical data science foundations, brand identity design systems, and modern frontend web engineering.
+- [Selected Works](https://ibrahimbenabida.online/works): Case studies across branding architecture, clinical management SaaS portals, algorithmic course design, and commercial product overhaul.
+- [Contact](https://ibrahimbenabida.online/contact): Direct project inquiry and consultation portal.
+- [Bio Links](https://ibrahimbenabida.online/links): Direct directory containing verified social profiles, GitHub repositories, and WhatsApp communication channel.
 
-## Canonical Profiles
-- **Website**: https://ibrahimbenabida.online
-- **Email**: email.me@ibrahimbenabida.online
-- **GitHub**: https://github.com/blood-prog
-- **Instagram**: https://www.instagram.com/benabida.ibrahim
-- **Location**: Algiers, Algeria
-- **Academic Affiliation**: USTHB (Algiers)
+## External Profiles
 
-## Featured Projects
-- **Golden Angle Brand Identity**: Mathematical spiral brand manual uniting computational data science with architectural typography based on the 137.5° golden angle.
-- **Clinical Management & Patient Flow**: High-density medical dashboard and clinic appointment portal balancing clinical usability with high performance.
-- **GridCraft Engine**: Interactive procedural grid and pattern generator exploring mathematical tessellations.
+- [GitHub Profile](https://github.com/blood-prog): Open-source data science implementations, algorithmic logic, and web application repositories.
+- [Instagram Visual Archive](https://www.instagram.com/benabida.ibrahim): Digital design studies, typography scale experiments, and visual culture archive.
+- [WhatsApp Channel](https://wa.me/213561481082): Direct communication channel for real-time project inquiries.
+
+## Optional
+
+- [Sitemap](https://ibrahimbenabida.online/sitemap.xml): Full XML sitemap index.
+- [Robots](https://ibrahimbenabida.online/robots.txt): Machine-readable crawler permissions and indexing instructions.

@@ -129,8 +129,8 @@ export const LinksPage: React.FC<LinksPageProps> = ({
         aria-hidden="true"
         style={{
           backgroundImage: darkMode
-            ? `url('/patterns/social-1080x1350/png/rings_cherry-linen.png')`
-            : `url('/patterns/social-1080x1350/png/rings_linen-cherry.png')`,
+            ? `url('/patterns/social-1080x1350/png/rings_cherry-linen.webp')`
+            : `url('/patterns/social-1080x1350/png/rings_linen-cherry.webp')`,
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center center',
           backgroundSize: 'cover',
@@ -185,7 +185,7 @@ export const LinksPage: React.FC<LinksPageProps> = ({
           {/* User's Exact Portrait Photo */}
           <div className="relative mb-3.5">
             <img
-              src="/profile/ibrahim-links.jpg"
+              src="/profile/ibrahim-links.webp"
               alt="Ibrahim Benabida"
               loading="eager"
               fetchPriority="high"

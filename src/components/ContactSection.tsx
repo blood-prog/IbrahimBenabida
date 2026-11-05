@@ -27,7 +27,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
         <div className="flex items-center gap-4 sm:gap-6">
           <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-terracotta dark:border-soft-linen shrink-0 shadow-sm">
             <img
-              src="/profile/ibrahim-cherry-portrait.jpg"
+              src="/profile/ibrahim-cherry-portrait.webp"
               alt="Ibrahim Benabida"
               className="w-full h-full object-cover object-[center_20%]"
             />

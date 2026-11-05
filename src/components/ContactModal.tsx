@@ -64,7 +64,7 @@ Sent via ibrahimbenabida.online contact modal`;
           <div className="flex items-center gap-3 sm:gap-4">
             <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-terracotta dark:border-soft-linen shrink-0 shadow-sm">
               <img
-                src="/profile/ibrahim-cherry-portrait.jpg"
+                src="/profile/ibrahim-cherry-portrait.webp"
                 alt="Ibrahim Benabida"
                 className="w-full h-full object-cover object-[center_20%]"
               />

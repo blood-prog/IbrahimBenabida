@@ -34,5 +34,7 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-# Sitemap declaration
+# Sitemap & LLM declarations
 Sitemap: https://ibrahimbenabida.online/sitemap.xml
+# LLMs specification: https://llmstxt.org
+# Machine-readable entity summary: https://ibrahimbenabida.online/llms.txt

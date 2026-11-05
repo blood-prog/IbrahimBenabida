@@ -111,8 +111,8 @@ export const HeroGenerativeCanvas: React.FC = () => {
 export const HeroPortraitPlaceholder: React.FC = () => {
   return (
     <div className="relative w-full h-full min-h-[300px] md:min-h-[380px] lg:min-h-[460px] overflow-hidden border-l border-grid select-none">
-      <img
-        src="/profile/lake-twilight.jpg"
+      <img loading="lazy" decoding="async"
+        src="/profile/lake-twilight.webp"
         alt="Twilight Waters and Horizon at Dusk in Algiers"
         className="w-full h-full object-cover object-[center_60%] transition-transform duration-700 ease-out"
       />
@@ -167,8 +167,8 @@ export const AboutSectionPlaceholder: React.FC = () => {
 export const WorksVerticalPlaceholder: React.FC = () => {
   return (
     <div className="relative w-full h-full min-h-[480px] overflow-hidden border-t lg:border-t-0 lg:border-l border-grid select-none">
-      <img
-        src="/profile/usthb-facade.jpg"
+      <img loading="lazy" decoding="async"
+        src="/profile/usthb-facade.webp"
         alt="USTHB Monumental Concrete Arches under Sunset Clouds"
         className="w-full h-full object-cover object-[center_50%] transition-transform duration-700 ease-out"
       />
@@ -180,8 +180,8 @@ export const WorksVerticalPlaceholder: React.FC = () => {
 export const ContactPlaceholder: React.FC = () => {
   return (
     <div className="relative w-full h-full min-h-[340px] overflow-hidden border-t md:border-t-0 md:border-l border-grid select-none group">
-      <img
-        src="/profile/park-sunset.jpg"
+      <img loading="lazy" decoding="async"
+        src="/profile/park-sunset.webp"
         alt="Algiers Park Meadow and Bench at Sunset"
         className="w-full h-full object-cover object-[center_60%] transition-transform duration-700 ease-out group-hover:scale-105"
       />
@@ -193,8 +193,8 @@ export const ContactPlaceholder: React.FC = () => {
 export const WorksHeroPlaceholder: React.FC = () => {
   return (
     <div className="relative w-full h-full min-h-[380px] lg:min-h-[480px] overflow-hidden select-none">
-      <img
-        src="/profile/golden-forest.jpg"
+      <img loading="lazy" decoding="async"
+        src="/profile/golden-forest.webp"
         alt="Golden Pine Forest Canopy"
         className="w-full h-full object-cover object-[center_50%] transition-transform duration-700 ease-out"
       />
@@ -216,7 +216,7 @@ export const FeaturedWorkPlaceholder: React.FC<{
         />
         <div className="relative w-full h-full border border-grid bg-soft-linen dark:bg-terracotta shadow-md overflow-hidden flex flex-col justify-center">
           {image ? (
-            <img
+            <img loading="lazy" decoding="async"
               src={image}
               alt={title || "Featured Work"}
               className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105"
@@ -236,8 +236,8 @@ export const FeaturedWorkPlaceholder: React.FC<{
 export const ContactHeroPlaceholder: React.FC = () => {
   return (
     <div className="relative w-full h-full min-h-[340px] lg:min-h-[460px] overflow-hidden select-none border-t lg:border-t-0 lg:border-l border-grid">
-      <img
-        src="/profile/usthb-campus.jpg"
+      <img loading="lazy" decoding="async"
+        src="/profile/usthb-campus.webp"
         alt="USTHB Campus View with Architecture and Palm Trees"
         className="w-full h-full object-cover object-[center_60%] transition-transform duration-700 ease-out"
       />
