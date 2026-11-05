@@ -13,6 +13,8 @@ export const personalInfo = {
   email: "email.me@ibrahimbenabida.online",
   github: "https://github.com/blood-prog",
   instagram: "https://www.instagram.com/benabida.ibrahim",
+  whatsapp: "https://wa.me/213561481082",
+  whatsappNumber: "+213 561 48 10 82",
 };
 
 export const citiesConfig: CityTime[] = [
