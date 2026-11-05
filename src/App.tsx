@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { Header } from './components/Header';
 import { MenuModal } from './components/MenuModal';
 import { HeroSection } from './components/HeroSection';
@@ -8,23 +8,37 @@ import { Marquee } from './components/Marquee';
 import { ServicesSection } from './components/ServicesSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
-import { AboutModal } from './components/AboutModal';
-import { ProjectModal } from './components/ProjectModal';
-import { ContactModal } from './components/ContactModal';
 import { ThemeTransition } from './components/ThemeTransition';
-import { WorksPage } from './components/WorksPage';
-import { ContactPage } from './components/ContactPage';
 import { LinksPage } from './components/LinksPage';
 import { Project } from './types';
 import { Analytics } from '@vercel/analytics/react';
+
+// Code-split heavy sub-pages and modal dialogs to minimize initial bundle size and speed up page load
+const WorksPage = lazy(() => import('./components/WorksPage').then(m => ({ default: m.WorksPage })));
+const ContactPage = lazy(() => import('./components/ContactPage').then(m => ({ default: m.ContactPage })));
+const AboutModal = lazy(() => import('./components/AboutModal').then(m => ({ default: m.AboutModal })));
+const ProjectModal = lazy(() => import('./components/ProjectModal').then(m => ({ default: m.ProjectModal })));
+const ContactModal = lazy(() => import('./components/ContactModal').then(m => ({ default: m.ContactModal })));
+
+// Synchronously compute initial route from URL to avoid any flash of portfolio home
+const getInitialPage = (): 'home' | 'works' | 'contact' | 'links' => {
+  if (typeof window === 'undefined') return 'home';
+  const path = window.location.pathname.toLowerCase();
+  const hash = window.location.hash.toLowerCase();
+
+  if (path.includes('links') || hash.includes('links')) return 'links';
+  if (path.includes('works') || hash.includes('works')) return 'works';
+  if (path.includes('contact') || hash.includes('contact')) return 'contact';
+  return 'home';
+};
 
 export const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [targetTheme, setTargetTheme] = useState<'dark' | 'light'>('light');
 
-  // Multi-page routing state: 'home' | 'works' | 'contact' | 'links'
-  const [currentPage, setCurrentPage] = useState<'home' | 'works' | 'contact' | 'links'>('home');
+  // Synchronous route initialization eliminates the 500ms portfolio home flash
+  const [currentPage, setCurrentPage] = useState<'home' | 'works' | 'contact' | 'links'>(getInitialPage);
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [aboutModalOpen, setAboutModalOpen] = useState(false);
@@ -136,11 +150,13 @@ export const App: React.FC = () => {
           />
         )}
 
-        {currentPage === 'works' && (
-          <WorksPage onSelectProject={(p) => setSelectedProject(p)} />
-        )}
+        <Suspense fallback={<div className="min-h-screen bg-[var(--page-bg)]" />}>
+          {currentPage === 'works' && (
+            <WorksPage onSelectProject={(p) => setSelectedProject(p)} />
+          )}
 
-        {currentPage === 'contact' && <ContactPage />}
+          {currentPage === 'contact' && <ContactPage />}
+        </Suspense>
 
         {currentPage === 'home' && (
           <>
@@ -174,15 +190,25 @@ export const App: React.FC = () => {
       {/* 7. High-Impact Inverted Footer (Hidden on dedicated /links bio page) */}
       {currentPage !== 'links' && <Footer onNavigate={navigateTo} />}
 
-      {/* Interactive Modals */}
-      <MenuModal
-        isOpen={menuOpen}
-        onClose={() => setMenuOpen(false)}
-        onNavigate={navigateTo}
-      />
-      <AboutModal isOpen={aboutModalOpen} onClose={() => setAboutModalOpen(false)} />
-      <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
-      <ContactModal isOpen={contactModalOpen} onClose={() => setContactModalOpen(false)} />
+      {/* Interactive Modals (Rendered only when outside /links and when active) */}
+      {currentPage !== 'links' && (
+        <Suspense fallback={null}>
+          <MenuModal
+            isOpen={menuOpen}
+            onClose={() => setMenuOpen(false)}
+            onNavigate={navigateTo}
+          />
+          {aboutModalOpen && (
+            <AboutModal isOpen={aboutModalOpen} onClose={() => setAboutModalOpen(false)} />
+          )}
+          {selectedProject && (
+            <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+          )}
+          {contactModalOpen && (
+            <ContactModal isOpen={contactModalOpen} onClose={() => setContactModalOpen(false)} />
+          )}
+        </Suspense>
+      )}
 
       {/* Vercel Analytics */}
       <Analytics />

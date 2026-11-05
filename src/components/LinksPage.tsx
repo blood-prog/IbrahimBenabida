@@ -187,6 +187,9 @@ export const LinksPage: React.FC<LinksPageProps> = ({
             <img
               src="/profile/ibrahim-links.jpg"
               alt="Ibrahim Benabida"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover shadow-lg border-[3px] border-white dark:border-soft-linen/30"
             />
           </div>
