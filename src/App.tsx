@@ -14,6 +14,7 @@ import { ContactModal } from './components/ContactModal';
 import { ThemeTransition } from './components/ThemeTransition';
 import { WorksPage } from './components/WorksPage';
 import { ContactPage } from './components/ContactPage';
+import { LinksPage } from './components/LinksPage';
 import { Project } from './types';
 import { Analytics } from '@vercel/analytics/react';
 
@@ -22,8 +23,8 @@ export const App: React.FC = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [targetTheme, setTargetTheme] = useState<'dark' | 'light'>('light');
 
-  // Multi-page routing state: 'home' | 'works' | 'contact'
-  const [currentPage, setCurrentPage] = useState<'home' | 'works' | 'contact'>('home');
+  // Multi-page routing state: 'home' | 'works' | 'contact' | 'links'
+  const [currentPage, setCurrentPage] = useState<'home' | 'works' | 'contact' | 'links'>('home');
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [aboutModalOpen, setAboutModalOpen] = useState(false);
@@ -36,7 +37,9 @@ export const App: React.FC = () => {
       const path = window.location.pathname.toLowerCase();
       const hash = window.location.hash.toLowerCase();
 
-      if (path.includes('works') || hash.includes('works')) {
+      if (path.includes('links') || hash.includes('links')) {
+        setCurrentPage('links');
+      } else if (path.includes('works') || hash.includes('works')) {
         setCurrentPage('works');
       } else if (path.includes('contact') || hash.includes('contact')) {
         setCurrentPage('contact');
@@ -55,7 +58,7 @@ export const App: React.FC = () => {
     };
   }, []);
 
-  const navigateTo = (page: 'home' | 'works' | 'contact', targetSectionId?: string) => {
+  const navigateTo = (page: 'home' | 'works' | 'contact' | 'links', targetSectionId?: string) => {
     setCurrentPage(page);
 
     const targetUrl =
@@ -110,17 +113,29 @@ export const App: React.FC = () => {
       {/* Sweeping Parallelogram Transition Overlay */}
       <ThemeTransition isTransitioning={isTransitioning} targetTheme={targetTheme} />
 
-      {/* Fixed Sticky Header */}
-      <Header
-        darkMode={darkMode}
-        onToggleTheme={handleToggleTheme}
-        isThemeTransitioning={isTransitioning}
-        onOpenMenu={() => setMenuOpen(true)}
-        onNavigateHome={() => navigateTo('home')}
-      />
+      {/* Fixed Sticky Header (Hidden on dedicated /links bio page) */}
+      {currentPage !== 'links' && (
+        <Header
+          darkMode={darkMode}
+          onToggleTheme={handleToggleTheme}
+          isThemeTransitioning={isTransitioning}
+          onOpenMenu={() => setMenuOpen(true)}
+          onNavigateHome={() => navigateTo('home')}
+        />
+      )}
 
       {/* Main Content Router */}
       <main className="flex-1 flex flex-col">
+        {currentPage === 'links' && (
+          <LinksPage
+            darkMode={darkMode}
+            onToggleTheme={handleToggleTheme}
+            onNavigateHome={() => navigateTo('home')}
+            onNavigateWorks={() => navigateTo('works')}
+            onNavigateContact={() => navigateTo('contact')}
+          />
+        )}
+
         {currentPage === 'works' && (
           <WorksPage onSelectProject={(p) => setSelectedProject(p)} />
         )}
@@ -132,7 +147,7 @@ export const App: React.FC = () => {
             {/* 1. Hero Visual Media & Giant Brand Identity */}
             <HeroSection />
 
-            {/* 2. THE designer. (Bio & Academic Foundation) */}
+            {/* 2. The designer. (Bio & Academic Foundation) */}
             <AboutSection onOpenAboutModal={() => setAboutModalOpen(true)} />
 
             {/* 3. SELECTED works. (Interactive Projects Showcase) */}
@@ -156,8 +171,8 @@ export const App: React.FC = () => {
         )}
       </main>
 
-      {/* 7. High-Impact Inverted Footer */}
-      <Footer onNavigate={navigateTo} />
+      {/* 7. High-Impact Inverted Footer (Hidden on dedicated /links bio page) */}
+      {currentPage !== 'links' && <Footer onNavigate={navigateTo} />}
 
       {/* Interactive Modals */}
       <MenuModal

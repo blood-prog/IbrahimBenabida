@@ -100,8 +100,8 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenAboutModal }) 
           
           {/* Header Title Box: pure typographic headline with visual rest */}
           <div className="border-b border-grid p-4 sm:p-6 md:p-8">
-            <h2 className="text-[clamp(3rem,9vw,6.5rem)] leading-[0.9] font-bold tracking-tight text-terracotta dark:text-soft-linen">
-              designer.
+            <h2 className="text-[clamp(3rem,9vw,6.5rem)] leading-[0.9] font-display font-bold tracking-tight text-terracotta dark:text-soft-linen">
+              The designer.
             </h2>
           </div>
 

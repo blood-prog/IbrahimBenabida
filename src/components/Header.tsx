@@ -48,16 +48,18 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="sticky top-0 z-40 bg-[var(--page-bg)] border-b border-grid flex items-stretch h-14 md:h-16 text-[var(--page-text)] transition-colors duration-0 select-none min-w-0 w-full">
       {/* Brand Mark (Left Column) */}
-      <div className="flex items-center px-3 sm:px-5 md:px-8 border-r border-grid shrink-0">
+      <div className="h-full flex items-center justify-center px-3 sm:px-5 md:px-8 border-r border-grid shrink-0">
         <a
           href="/"
           onClick={(e) => {
             e.preventDefault();
             if (onNavigateHome) onNavigateHome();
           }}
-          className="text-xl sm:text-2xl md:text-3xl font-display font-bold tracking-tight text-graphite dark:text-soft-linen hover:opacity-80 active:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta dark:focus-visible:ring-soft-linen flex items-baseline cursor-pointer min-h-[48px] flex items-center"
+          className="h-full inline-flex items-center justify-center text-xl sm:text-2xl md:text-3xl font-display font-bold tracking-tight text-graphite dark:text-soft-linen hover:opacity-80 active:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta dark:focus-visible:ring-soft-linen cursor-pointer select-none leading-none"
         >
-          {personalInfo.shortName}
+          <span className="inline-flex items-center leading-none">
+            {personalInfo.shortName}
+          </span>
         </a>
       </div>
 
